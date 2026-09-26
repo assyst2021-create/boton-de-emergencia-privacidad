@@ -22,8 +22,6 @@ body {
   color: var(--text);
   min-height: 100vh;
 }
-
-/* Header */
 .site-header {
   position: sticky; top: 0; z-index: 100;
   background: var(--surface);
@@ -50,6 +48,19 @@ body {
   font-size: 0.7rem; font-weight: 600;
   letter-spacing: 0.09em; text-transform: uppercase; color: var(--text3);
 }
+.lang-switcher {
+  margin-left: auto; display: flex; gap: 4px; flex-shrink: 0;
+}
+.lang-btn {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
+  color: var(--text3); background: none;
+  border: 1.5px solid var(--border); border-radius: 6px;
+  padding: 4px 9px; cursor: pointer;
+  transition: color .15s, border-color .15s, background .15s;
+}
+.lang-btn:hover { color: var(--text); border-color: var(--text3); }
+.lang-btn.active { color: var(--accent); border-color: var(--accent); background: rgba(192,57,43,0.06); }
 .tabs-bar {
   display: flex; overflow-x: auto; scrollbar-width: none; padding: 0 12px;
 }
@@ -66,16 +77,12 @@ body {
 }
 .tab-btn:hover { color: var(--text); }
 .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
-
-/* Content */
 .content {
   max-width: 760px; margin: 0 auto;
   padding: 36px 20px 80px;
 }
 .doc { display: none; }
 .doc.active { display: block; }
-
-/* Doc header */
 .doc-eyebrow {
   font-size: 0.7rem; font-weight: 700;
   letter-spacing: 0.1em; text-transform: uppercase;
@@ -97,8 +104,6 @@ body {
 }
 .meta-row { font-size: 0.82rem; color: var(--text2); line-height: 1.5; }
 .meta-row strong { font-weight: 600; color: var(--text); }
-
-/* Sections */
 .sections { display: flex; flex-direction: column; gap: 10px; }
 .section-card {
   background: var(--surface);
@@ -116,19 +121,17 @@ body {
   white-space: pre-line;
 }
 .section-body strong { color: var(--text); font-weight: 600; }
-
-/* Footer */
 .page-footer {
   text-align: center; margin-top: 48px;
   padding-top: 24px; border-top: 1px solid var(--border);
   color: var(--text3); font-size: 0.78rem;
 }
-
 @media (max-width: 480px) {
   .doc-title { font-size: 1.6rem; }
   .tab-btn { padding: 12px 13px; font-size: 0.78rem; }
   .brand { padding: 11px 16px 10px; }
   .content { padding: 24px 16px 60px; }
+  .lang-btn { font-size: 0.68rem; padding: 4px 7px; }
 }
 </style>
 </head>
@@ -138,403 +141,383 @@ body {
   <div class="brand">
     <div class="brand-icon"><img src="logo.png" alt="Botón de Emergencia" /></div>
     <div>
-      <div class="brand-name">Botón de Emergencia</div>
-      <div class="brand-sub">ASSYST · Documentos Legales</div>
+      <div class="brand-name" id="brand-name">Botón de Emergencia</div>
+      <div class="brand-sub" id="brand-sub">ASSYST · Documentos Legales</div>
+    </div>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="pt">PT</button>
     </div>
   </div>
-  <div class="tabs-bar" role="tablist">
-    <button class="tab-btn active" role="tab" aria-selected="true"  data-doc="privacidad">Política de Privacidad</button>
-    <button class="tab-btn"        role="tab" aria-selected="false" data-doc="terminos">Términos de Uso</button>
-    <button class="tab-btn"        role="tab" aria-selected="false" data-doc="contrato">Contrato de Servicio</button>
-    <button class="tab-btn"        role="tab" aria-selected="false" data-doc="aviso">Aviso Legal</button>
-    <button class="tab-btn"        role="tab" aria-selected="false" data-doc="eliminar">Eliminar Cuenta</button>
-  </div>
+  <div class="tabs-bar" role="tablist" id="tabs-bar"></div>
 </header>
 
-<main class="content">
-
-<!-- POLÍTICA DE PRIVACIDAD -->
-<article id="privacidad" class="doc active" role="tabpanel">
-  <div class="doc-eyebrow">ASSYST · Botón de Emergencia</div>
-  <h1 class="doc-title">Política de Privacidad</h1>
-  <div class="meta-box">
-    <div class="meta-row"><strong>Responsable:</strong> ASSYST</div>
-    <div class="meta-row"><strong>Aplicación:</strong> Botón de Emergencia</div>
-    <div class="meta-row"><strong>Contacto:</strong> assyst2021@ssthechofacil.com</div>
-    <div class="meta-row"><strong>Última actualización:</strong> 10 de septiembre de 2026</div>
-  </div>
-  <div class="sections">
-    <div class="section-card">
-      <div class="section-title">1. Introducción</div>
-      <div class="section-body">La presente Política de Privacidad establece las condiciones bajo las cuales ASSYST recopila, utiliza, almacena y protege la información personal de los usuarios de Botón de Emergencia, aplicación creada y desarrollada por ASSYST. Su finalidad es informar de manera clara y transparente qué información se solicita, para qué se utiliza y cuáles son las opciones disponibles para el usuario.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">2. Responsable del tratamiento y contacto</div>
-      <div class="section-body">ASSYST es el responsable de la aplicación y de la gestión de la información personal que los usuarios proporcionan directamente mediante el registro y uso de sus funcionalidades.
-
-Para consultas relacionadas con privacidad, tratamiento de datos, actualización de información o solicitudes de eliminación de la cuenta:
-
-Correo electrónico: assyst2021@ssthechofacil.com</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">3. Información que recopilamos</div>
-      <div class="section-body">Al registrarse y utilizar la aplicación, podemos recopilar:
-
-· Nombre completo.
-· Nombre de usuario.
-· Correo electrónico.
-· Número de teléfono.
-· Información necesaria para gestionar y mantener la cuenta.
-· Ubicación GPS, únicamente cuando el usuario activa voluntariamente una función de alerta.
-
-ASSYST no recopila la ubicación GPS de manera permanente.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">4. Cómo utilizamos la información</div>
-      <div class="section-body">· Crear, identificar y administrar la cuenta del usuario.
-· Permitir el acceso y uso de las funcionalidades de la aplicación.
-· Facilitar el inicio de sesión y la recuperación de la contraseña.
-· Facilitar el contacto entre el usuario y los familiares vinculados.
-· Enviar la ubicación GPS a los familiares vinculados cuando el usuario activa una alerta.
-· Mantener la seguridad, integridad y correcto funcionamiento de la aplicación.
-· Cumplir las obligaciones legales aplicables.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">5. Ubicación GPS y funciones de alerta</div>
-      <div class="section-body">La aplicación puede utilizar la ubicación GPS exclusivamente para apoyar sus funciones de alerta, cuando el usuario presiona voluntariamente el botón correspondiente.
-
-La ubicación GPS no será utilizada como mecanismo de vigilancia, rastreo, monitoreo permanente ni para fines relacionados con relaciones sentimentales, infidelidades, celos o conflictos de pareja.
-
-<strong>RESPONSABILIDAD:</strong> El uso de la ubicación es responsabilidad del usuario. ASSYST no se hace responsable por el uso indebido de la información de ubicación.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">6. Compartición y acceso a los datos</div>
-      <div class="section-body">ASSYST no vende los datos personales de los usuarios. Cuando se activa una alerta, la ubicación podrá ser puesta a disposición de los familiares o contactos que el propio usuario haya vinculado dentro de la aplicación.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">7. Almacenamiento y seguridad</div>
-      <div class="section-body">Los datos se almacenan en servidores seguros con cifrado en tránsito y controles de acceso que garantizan que cada usuario solo pueda acceder a su propia información.
-
-ASSYST implementa medidas técnicas razonables para proteger la información personal. Ningún sistema tecnológico puede garantizar un riesgo absolutamente nulo frente a accesos no autorizados.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">8. Conservación de la información</div>
-      <div class="section-body">La información personal se conservará mientras sea necesaria para mantener la cuenta y prestar las funcionalidades de la aplicación, así como para atender obligaciones legales.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">9. Derechos del usuario</div>
-      <div class="section-body">· Conocer qué información personal es objeto de tratamiento.
-· Solicitar la actualización o corrección de información incorrecta.
-· Solicitar la eliminación de su cuenta y datos personales.
-· Presentar consultas o reclamaciones relacionadas con el tratamiento de sus datos.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">10. Eliminación o actualización de datos</div>
-      <div class="section-body">El usuario podrá solicitar la eliminación de su cuenta escribiendo a assyst2021@ssthechofacil.com. La solicitud se gestionará en un plazo máximo de quince (15) días hábiles.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">11. Datos de menores de edad</div>
-      <div class="section-body">La aplicación no está diseñada para solicitar deliberadamente información personal de menores de edad sin las autorizaciones exigidas por la normativa aplicable.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">12. Modificaciones de la política</div>
-      <div class="section-body">ASSYST podrá actualizar esta Política cuando sea necesario. Se recomienda a los usuarios revisarla periódicamente.
-
-Última actualización: 10 de septiembre de 2026</div>
-    </div>
-  </div>
-</article>
-
-<!-- TÉRMINOS DE USO -->
-<article id="terminos" class="doc" role="tabpanel">
-  <div class="doc-eyebrow">ASSYST · Botón de Emergencia</div>
-  <h1 class="doc-title">Términos de Uso</h1>
-  <div class="meta-box">
-    <div class="meta-row"><strong>Aplicación:</strong> Botón de Emergencia</div>
-    <div class="meta-row"><strong>Contacto:</strong> assyst2021@ssthechofacil.com</div>
-    <div class="meta-row"><strong>Última actualización:</strong> 10 de septiembre de 2026</div>
-  </div>
-  <div class="sections">
-    <div class="section-card">
-      <div class="section-title">1. Definiciones</div>
-      <div class="section-body">a) «Usuario»: persona que se registra, accede o utiliza Botón de Emergencia.
-b) «Aplicación»: Botón de Emergencia, sus funcionalidades, actualizaciones y componentes relacionados.
-c) «Contactos vinculados»: familiares o personas que el usuario incorpora y autoriza dentro de la aplicación.
-d) «Alerta de emergencia»: activación voluntaria realizada por el usuario mediante la funcionalidad correspondiente.
-e) «Ubicación»: información de localización GPS obtenida cuando el usuario activa voluntariamente una alerta.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">2. Aceptación de los términos</div>
-      <div class="section-body">El acceso y uso de Botón de Emergencia implica la aceptación de estos Términos y de la Política de Privacidad. Si el usuario no está de acuerdo, deberá abstenerse de utilizar la aplicación.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">3. Registro y cuenta</div>
-      <div class="section-body">La cuenta es de uso personal. El usuario se compromete a suministrar información verdadera y a proteger sus credenciales de acceso.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">4. Responsabilidad del usuario</div>
-      <div class="section-body">El usuario es el único responsable del uso que realice de la aplicación. Cualquier utilización indebida, incluyendo vigilancia, rastreo, acoso o uso de la ubicación con fines distintos a una emergencia, será responsabilidad exclusiva del usuario.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">5. Finalidad de la alerta</div>
-      <div class="section-body">La alerta debe activarse únicamente cuando exista una situación real que justifique su uso. El usuario debe evitar activaciones falsas, fraudulentas o abusivas.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">6. No sustitución de servicios oficiales</div>
-      <div class="section-body">Botón de Emergencia no sustituye los servicios oficiales de emergencia. Ante cualquier emergencia, el usuario debe comunicarse de inmediato con los servicios de emergencia disponibles en su país o región.
-
-La aplicación es únicamente un mecanismo tecnológico complementario.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">7. Conectividad y funcionamiento</div>
-      <div class="section-body">En zonas sin cobertura, con señal GPS insuficiente, batería agotada o permisos restringidos, una alerta puede no enviarse o no mostrar correctamente la ubicación. ASSYST no garantiza la transmisión inmediata en todas las circunstancias.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">8. Conductas prohibidas</div>
-      <div class="section-body">El usuario no podrá utilizar la aplicación para:
-
-a) Vigilar, rastrear o controlar indebidamente a otra persona.
-b) Usar la ubicación para fines sentimentales, celos o investigación personal ajena a una emergencia.
-c) Acosar, amenazar o causar perjuicios a otras personas.
-d) Realizar activaciones falsas o fraudulentas.
-e) Suplantar la identidad de otra persona.
-f) Intentar vulnerar componentes técnicos de la aplicación.
-g) Utilizar la aplicación para actividades ilícitas.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">9. Propiedad intelectual</div>
-      <div class="section-body">La aplicación, su diseño, textos, software, marcas y logotipos pertenecen a ASSYST. El usuario recibe únicamente una autorización limitada para utilizar el servicio conforme a estos Términos.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">10. Limitación del servicio</div>
-      <div class="section-body">La activación de una alerta no garantiza que los contactos, autoridades u otras personas respondan en un tiempo determinado ni que se produzca una intervención efectiva. En situaciones de riesgo, el usuario debe utilizar también los medios oficiales disponibles.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">11. Modificaciones de los términos</div>
-      <div class="section-body">ASSYST podrá modificar estos Términos cuando sea necesario. El uso continuado de la aplicación tras los cambios podrá considerarse aceptación de los Términos actualizados.
-
-Última actualización: 10 de septiembre de 2026</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">12. Legislación aplicable y contacto</div>
-      <div class="section-body">Estos Términos se rigen por la legislación aplicable según la jurisdicción del usuario.
-
-ASSYST · Botón de Emergencia · assyst2021@ssthechofacil.com</div>
-    </div>
-  </div>
-</article>
-
-<!-- CONTRATO DE SERVICIO -->
-<article id="contrato" class="doc" role="tabpanel">
-  <div class="doc-eyebrow">ASSYST · Botón de Emergencia</div>
-  <h1 class="doc-title">Contrato de Servicio</h1>
-  <div class="meta-box">
-    <div class="meta-row"><strong>Aplicación:</strong> Botón de Emergencia</div>
-    <div class="meta-row"><strong>Contacto:</strong> assyst2021@ssthechofacil.com</div>
-    <div class="meta-row"><strong>Última actualización:</strong> 10 de septiembre de 2026</div>
-  </div>
-  <div class="sections">
-    <div class="section-card">
-      <div class="section-title">1. Vigencia y planes de servicio</div>
-      <div class="section-body">El servicio se ofrece en tres modalidades:
-
-<strong>App Gratis:</strong> Acceso sin costo. Incluye 1 familiar vinculado y hasta 6 alertas por mes.
-
-<strong>Plan Familiar:</strong> Suscripción mensual o anual. Incluye hasta 5 familiares vinculados, alertas ilimitadas y mapa en tiempo real.
-
-<strong>Plan Premium:</strong> Suscripción mensual o anual. Incluye hasta 10 familiares vinculados, alertas ilimitadas y todas las funcionalidades de la aplicación.
-
-Los planes de suscripción (Familiar y Premium) incluyen un período de prueba gratuita de 7 días. Al vencer dicho período, la suscripción se renueva automáticamente salvo que el usuario la cancele antes desde Google Play → Suscripciones.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">2. Condiciones del pago</div>
-      <div class="section-body">La App Gratis es de acceso libre y sin costo.
-
-El Plan Familiar y el Plan Premium corresponden a suscripciones con facturación mensual o anual, según la opción elegida por el usuario. El cobro se realiza a través de Google Play al finalizar el período de prueba gratuita de 7 días, salvo que el usuario cancele antes.
-
-Las suscripciones se renuevan automáticamente al final de cada período contratado. El usuario puede cancelar en cualquier momento desde Google Play → Suscripciones. No se realizan reembolsos por períodos parciales, salvo en los casos reconocidos por la legislación aplicable en la jurisdicción del usuario.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">3. Mantenimiento y actualización</div>
-      <div class="section-body">Durante cada año de vigencia de la suscripción se realizarán actividades de mantenimiento y actualización. Las actualizaciones podrán incluir mejoras técnicas, correcciones, ajustes de seguridad y nuevas funcionalidades.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">4. Reembolsos y derechos del consumidor</div>
-      <div class="section-body">Los pagos no serán reembolsables, salvo cuando exista un derecho de devolución, reversión, retracto u otra obligación de reembolso reconocida por la legislación aplicable en la jurisdicción del usuario, o cuando ASSYST determine expresamente lo contrario.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">5. Uso responsable de la aplicación</div>
-      <div class="section-body">El usuario es el único responsable del uso que realice de la aplicación, de la información que proporcione y de los familiares o contactos que vincule dentro del servicio.
-
-Cualquier utilización indebida, incluyendo vigilancia, acoso, activaciones falsas o cualquier finalidad distinta a la atención de situaciones de emergencia, será responsabilidad exclusiva del usuario.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">6. Ubicación GPS</div>
-      <div class="section-body">La ubicación GPS se obtiene en el momento en que el usuario activa voluntariamente una alerta de emergencia. La aplicación no proporciona seguimiento continuo ni vigilancia permanente.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">7. Naturaleza del servicio y servicios oficiales</div>
-      <div class="section-body">Botón de Emergencia es una herramienta tecnológica de apoyo y comunicación. No constituye un servicio de atención de emergencias, rescate, ambulancia, policía, bomberos, vigilancia privada ni monitoreo profesional.
-
-Ante cualquier situación de emergencia, el usuario deberá comunicarse directamente con los servicios oficiales disponibles en su país o región.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">8. Requisitos técnicos y plan de datos</div>
-      <div class="section-body">Para que la aplicación funcione correctamente, el usuario debe contar con un plan de datos activo. ASSYST no proporciona ni financia planes de datos, internet ni servicios de comunicación.
-
-El funcionamiento también depende de: señal GPS, batería, permisos concedidos al dispositivo, configuración del sistema operativo y disponibilidad de los servicios de terceros.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">9. Tratamiento de datos personales</div>
-      <div class="section-body">El tratamiento de los datos personales se realizará de acuerdo con la Política de Privacidad de Botón de Emergencia, que forma parte de las condiciones aplicables al uso del servicio.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">10. Responsabilidad sobre los contactos vinculados</div>
-      <div class="section-body">El usuario es responsable de los familiares o contactos que vincule al servicio y de las autorizaciones que les otorgue mediante las funcionalidades de la aplicación.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">11. Suspensión o restricción del servicio</div>
-      <div class="section-body">ASSYST podrá restringir o suspender el acceso al servicio cuando existan indicios de utilización fraudulenta, abusiva, ilegal o contraria a este Contrato de Servicio.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">12. Propiedad intelectual</div>
-      <div class="section-body">La aplicación Botón de Emergencia, su diseño, estructura, contenidos, software, funcionalidades y marcas son propiedad de ASSYST o se utilizan con las autorizaciones correspondientes. El usuario recibe una autorización de uso limitada al funcionamiento normal del servicio.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">13. Soporte y contacto</div>
-      <div class="section-body">Para consultas, soporte o solicitudes relacionadas con el servicio:
-
-ASSYST · assyst2021@ssthechofacil.com</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">14. Modificaciones del contrato</div>
-      <div class="section-body">ASSYST podrá actualizar o modificar este Contrato de Servicio cuando resulte necesario. Las modificaciones relevantes serán comunicadas o puestas a disposición del usuario por los medios disponibles en la aplicación.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">15. Legislación aplicable</div>
-      <div class="section-body">Este Contrato de Servicio se regirá por la legislación vigente aplicable según la jurisdicción del usuario, sin perjuicio de los derechos que correspondan al consumidor conforme a la normativa local.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">16. Aceptación</div>
-      <div class="section-body">Al seleccionar «Leído y de acuerdo», el usuario declara que ha tenido acceso a este Contrato de Servicio, que lo ha leído, comprendido y aceptado, junto con los Términos de Uso, Aviso Legal y Política de Privacidad.</div>
-    </div>
-  </div>
-</article>
-
-<!-- AVISO LEGAL -->
-<article id="aviso" class="doc" role="tabpanel">
-  <div class="doc-eyebrow">ASSYST · Botón de Emergencia</div>
-  <h1 class="doc-title">Aviso Legal</h1>
-  <div class="meta-box">
-    <div class="meta-row"><strong>Titular:</strong> ASSYST</div>
-    <div class="meta-row"><strong>Contacto:</strong> assyst2021@ssthechofacil.com</div>
-    <div class="meta-row"><strong>Última actualización:</strong> 10 de septiembre de 2026</div>
-  </div>
-  <div class="sections">
-    <div class="section-card">
-      <div class="section-title">1. Titular del servicio</div>
-      <div class="section-body">Botón de Emergencia es una aplicación desarrollada y operada por ASSYST. Para cualquier consulta legal puede contactarnos en: assyst2021@ssthechofacil.com</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">2. Objeto</div>
-      <div class="section-body">El presente Aviso Legal regula el acceso y uso de Botón de Emergencia. El uso de la aplicación implica la aceptación de este aviso, así como de los Términos de Uso, la Política de Privacidad y el Contrato de Servicio.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">3. Exclusión de responsabilidad</div>
-      <div class="section-body">ASSYST no garantiza la disponibilidad continua del servicio ni que las alertas sean transmitidas en todas las circunstancias técnicas posibles. La aplicación es una herramienta de apoyo y no sustituye los servicios oficiales de emergencia.
-
-ASSYST no será responsable por daños derivados del uso indebido de la aplicación, por fallos técnicos ajenos a su control, ni por la falta de respuesta de terceros ante una alerta enviada.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">4. Propiedad intelectual</div>
-      <div class="section-body">El diseño, código, textos, logotipos y funcionalidades de la aplicación son propiedad de ASSYST o se utilizan con las autorizaciones correspondientes. Queda prohibida su reproducción, distribución o uso sin autorización expresa.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">5. Legislación y contacto</div>
-      <div class="section-body">Este Aviso Legal se rige por la legislación vigente aplicable según la jurisdicción del usuario.
-
-Última actualización: 10 de septiembre de 2026
-ASSYST · assyst2021@ssthechofacil.com</div>
-    </div>
-  </div>
-</article>
-
-<!-- ELIMINAR CUENTA -->
-<article id="eliminar" class="doc" role="tabpanel">
-  <div class="doc-eyebrow">ASSYST · Botón de Emergencia</div>
-  <h1 class="doc-title">Eliminar Cuenta y Datos</h1>
-  <div class="meta-box">
-    <div class="meta-row"><strong>Responsable:</strong> ASSYST</div>
-    <div class="meta-row"><strong>Contacto:</strong> assyst2021@ssthechofacil.com</div>
-    <div class="meta-row"><strong>Plazo de respuesta:</strong> Máximo 30 días hábiles</div>
-    <div class="meta-row"><strong>Última actualización:</strong> 21 de septiembre de 2026</div>
-  </div>
-  <div class="sections">
-    <div class="section-card">
-      <div class="section-title">Tu derecho a eliminar tu cuenta</div>
-      <div class="section-body">Puedes solicitar en cualquier momento la eliminación completa de tu cuenta y todos los datos personales asociados a ella, incluyendo tu perfil, contactos de emergencia, historial de alertas y cualquier otra información almacenada en nuestros servidores.
-
-La eliminación de la cuenta es permanente e irreversible. Una vez procesada, no podrás recuperar tu cuenta ni ninguno de los datos asociados.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">Cómo solicitar la eliminación</div>
-      <div class="section-body">Envía un correo electrónico a <strong>assyst2021@ssthechofacil.com</strong> con el asunto:
-
-<strong>"Solicitud de eliminación de cuenta"</strong>
-
-Incluye en el mensaje:
-• El correo electrónico con el que te registraste en la app
-• Tu nombre completo
-• Motivo de la solicitud (opcional)
-
-Procesaremos tu solicitud en un plazo máximo de <strong>30 días hábiles</strong> y te confirmaremos por correo cuando la eliminación haya sido completada.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">Qué datos se eliminan</div>
-      <div class="section-body">Al eliminar tu cuenta se borran permanentemente:
-• Perfil de usuario (nombre, correo, contraseña)
-• Contactos de emergencia registrados
-• Historial de alertas enviadas
-• Configuración y preferencias de la app
-• Datos de ubicación almacenados
-
-<strong>Datos que se conservan temporalmente:</strong> registros de transacciones de pago se conservan por el período legalmente requerido (mínimo 5 años según la legislación colombiana) antes de ser eliminados definitivamente.</div>
-    </div>
-    <div class="section-card">
-      <div class="section-title">Eliminar datos sin eliminar la cuenta</div>
-      <div class="section-body">Si deseas eliminar solo algunos de tus datos sin cerrar tu cuenta (por ejemplo, limpiar el historial de alertas o eliminar contactos de emergencia), puedes hacerlo directamente desde la sección de perfil dentro de la app, o solicitarlo por correo indicando qué datos específicos deseas eliminar.</div>
-    </div>
-  </div>
-</article>
-
-<footer class="page-footer">
-  ASSYST · Botón de Emergencia · assyst2021@ssthechofacil.com
-</footer>
-
-</main>
+<main class="content" id="main-content"></main>
 
 <script>
-const tabs = document.querySelectorAll('.tab-btn');
-const docs = document.querySelectorAll('.doc');
+const CONTENT = {
+  es: {
+    brandSub: 'ASSYST · Documentos Legales',
+    tabs: ['Política de Privacidad','Términos de Uso','Contrato de Servicio','Aviso Legal','Eliminar Cuenta'],
+    docs: [
+      {
+        id: 'privacidad',
+        eyebrow: 'ASSYST · Botón de Emergencia',
+        title: 'Política de Privacidad',
+        meta: [['Responsable','ASSYST'],['Aplicación','Botón de Emergencia'],['Contacto','assyst2021@ssthechofacil.com'],['Última actualización','10 de septiembre de 2026']],
+        sections: [
+          ['1. Introducción','La presente Política de Privacidad establece las condiciones bajo las cuales ASSYST recopila, utiliza, almacena y protege la información personal de los usuarios de Botón de Emergencia, aplicación creada y desarrollada por ASSYST. Su finalidad es informar de manera clara y transparente qué información se solicita, para qué se utiliza y cuáles son las opciones disponibles para el usuario.'],
+          ['2. Responsable del tratamiento y contacto','ASSYST es el responsable de la aplicación y de la gestión de la información personal que los usuarios proporcionan directamente mediante el registro y uso de sus funcionalidades.\n\nPara consultas relacionadas con privacidad, tratamiento de datos, actualización de información o solicitudes de eliminación de la cuenta:\n\nCorreo electrónico: assyst2021@ssthechofacil.com'],
+          ['3. Información que recopilamos','Al registrarse y utilizar la aplicación, podemos recopilar:\n\n· Nombre completo.\n· Nombre de usuario.\n· Correo electrónico.\n· Número de teléfono.\n· Información necesaria para gestionar y mantener la cuenta.\n· Ubicación GPS, únicamente cuando el usuario activa voluntariamente una función de alerta.\n\nASSYST no recopila la ubicación GPS de manera permanente.'],
+          ['4. Cómo utilizamos la información','· Crear, identificar y administrar la cuenta del usuario.\n· Permitir el acceso y uso de las funcionalidades de la aplicación.\n· Facilitar el inicio de sesión y la recuperación de la contraseña.\n· Facilitar el contacto entre el usuario y los familiares vinculados.\n· Enviar la ubicación GPS a los familiares vinculados cuando el usuario activa una alerta.\n· Mantener la seguridad, integridad y correcto funcionamiento de la aplicación.\n· Cumplir las obligaciones legales aplicables.'],
+          ['5. Ubicación GPS y funciones de alerta','La aplicación puede utilizar la ubicación GPS exclusivamente para apoyar sus funciones de alerta, cuando el usuario presiona voluntariamente el botón correspondiente.\n\nLa ubicación GPS no será utilizada como mecanismo de vigilancia, rastreo, monitoreo permanente ni para fines relacionados con relaciones sentimentales, infidelidades, celos o conflictos de pareja.\n\nRESPONSABILIDAD: El uso de la ubicación es responsabilidad del usuario. ASSYST no se hace responsable por el uso indebido de la información de ubicación.'],
+          ['6. Compartición y acceso a los datos','ASSYST no vende los datos personales de los usuarios. Cuando se activa una alerta, la ubicación podrá ser puesta a disposición de los familiares o contactos que el propio usuario haya vinculado dentro de la aplicación.'],
+          ['7. Almacenamiento y seguridad','Los datos se almacenan en servidores seguros con cifrado en tránsito y controles de acceso que garantizan que cada usuario solo pueda acceder a su propia información.\n\nASSYST implementa medidas técnicas razonables para proteger la información personal. Ningún sistema tecnológico puede garantizar un riesgo absolutamente nulo frente a accesos no autorizados.'],
+          ['8. Conservación de la información','La información personal se conservará mientras sea necesaria para mantener la cuenta y prestar las funcionalidades de la aplicación, así como para atender obligaciones legales.'],
+          ['9. Derechos del usuario','· Conocer qué información personal es objeto de tratamiento.\n· Solicitar la actualización o corrección de información incorrecta.\n· Solicitar la eliminación de su cuenta y datos personales.\n· Presentar consultas o reclamaciones relacionadas con el tratamiento de sus datos.'],
+          ['10. Eliminación o actualización de datos','El usuario podrá solicitar la eliminación de su cuenta escribiendo a assyst2021@ssthechofacil.com. La solicitud se gestionará en un plazo máximo de quince (15) días hábiles.'],
+          ['11. Datos de menores de edad','La aplicación no está diseñada para solicitar deliberadamente información personal de menores de edad sin las autorizaciones exigidas por la normativa aplicable.'],
+          ['12. Modificaciones de la política','ASSYST podrá actualizar esta Política cuando sea necesario. Se recomienda a los usuarios revisarla periódicamente.\n\nÚltima actualización: 10 de septiembre de 2026'],
+        ]
+      },
+      {
+        id: 'terminos',
+        eyebrow: 'ASSYST · Botón de Emergencia',
+        title: 'Términos de Uso',
+        meta: [['Aplicación','Botón de Emergencia'],['Contacto','assyst2021@ssthechofacil.com'],['Última actualización','10 de septiembre de 2026']],
+        sections: [
+          ['1. Definiciones','a) «Usuario»: persona que se registra, accede o utiliza Botón de Emergencia.\nb) «Aplicación»: Botón de Emergencia, sus funcionalidades, actualizaciones y componentes relacionados.\nc) «Contactos vinculados»: familiares o personas que el usuario incorpora y autoriza dentro de la aplicación.\nd) «Alerta de emergencia»: activación voluntaria realizada por el usuario mediante la funcionalidad correspondiente.\ne) «Ubicación»: información de localización GPS obtenida cuando el usuario activa voluntariamente una alerta.'],
+          ['2. Aceptación de los términos','El acceso y uso de Botón de Emergencia implica la aceptación de estos Términos y de la Política de Privacidad. Si el usuario no está de acuerdo, deberá abstenerse de utilizar la aplicación.'],
+          ['3. Registro y cuenta','La cuenta es de uso personal. El usuario se compromete a suministrar información verdadera y a proteger sus credenciales de acceso.'],
+          ['4. Responsabilidad del usuario','El usuario es el único responsable del uso que realice de la aplicación. Cualquier utilización indebida, incluyendo vigilancia, rastreo, acoso o uso de la ubicación con fines distintos a una emergencia, será responsabilidad exclusiva del usuario.'],
+          ['5. Finalidad de la alerta','La alerta debe activarse únicamente cuando exista una situación real que justifique su uso. El usuario debe evitar activaciones falsas, fraudulentas o abusivas.'],
+          ['6. No sustitución de servicios oficiales','Botón de Emergencia no sustituye los servicios oficiales de emergencia. Ante cualquier emergencia, el usuario debe comunicarse de inmediato con los servicios de emergencia disponibles en su país o región.\n\nLa aplicación es únicamente un mecanismo tecnológico complementario.'],
+          ['7. Conectividad y funcionamiento','En zonas sin cobertura, con señal GPS insuficiente, batería agotada o permisos restringidos, una alerta puede no enviarse o no mostrar correctamente la ubicación. ASSYST no garantiza la transmisión inmediata en todas las circunstancias.'],
+          ['8. Conductas prohibidas','El usuario no podrá utilizar la aplicación para:\n\na) Vigilar, rastrear o controlar indebidamente a otra persona.\nb) Usar la ubicación para fines sentimentales, celos o investigación personal ajena a una emergencia.\nc) Acosar, amenazar o causar perjuicios a otras personas.\nd) Realizar activaciones falsas o fraudulentas.\ne) Suplantar la identidad de otra persona.\nf) Intentar vulnerar componentes técnicos de la aplicación.\ng) Utilizar la aplicación para actividades ilícitas.'],
+          ['9. Propiedad intelectual','La aplicación, su diseño, textos, software, marcas y logotipos pertenecen a ASSYST. El usuario recibe únicamente una autorización limitada para utilizar el servicio conforme a estos Términos.'],
+          ['10. Limitación del servicio','La activación de una alerta no garantiza que los contactos, autoridades u otras personas respondan en un tiempo determinado ni que se produzca una intervención efectiva. En situaciones de riesgo, el usuario debe utilizar también los medios oficiales disponibles.'],
+          ['11. Modificaciones de los términos','ASSYST podrá modificar estos Términos cuando sea necesario. El uso continuado de la aplicación tras los cambios podrá considerarse aceptación de los Términos actualizados.\n\nÚltima actualización: 10 de septiembre de 2026'],
+          ['12. Legislación aplicable y contacto','Estos Términos se rigen por la legislación aplicable según la jurisdicción del usuario.\n\nASSYST · Botón de Emergencia · assyst2021@ssthechofacil.com'],
+        ]
+      },
+      {
+        id: 'contrato',
+        eyebrow: 'ASSYST · Botón de Emergencia',
+        title: 'Contrato de Servicio',
+        meta: [['Aplicación','Botón de Emergencia'],['Contacto','assyst2021@ssthechofacil.com'],['Última actualización','26 de septiembre de 2026']],
+        sections: [
+          ['1. Vigencia y planes de servicio','El servicio se ofrece en tres modalidades:\n\n<strong>App Gratis:</strong> Acceso sin costo. Incluye 1 familiar vinculado y hasta 6 alertas por mes.\n\n<strong>Plan Familiar:</strong> Suscripción mensual o anual. Incluye hasta 5 familiares vinculados, alertas ilimitadas y mapa en tiempo real.\n\n<strong>Plan Premium:</strong> Suscripción mensual o anual. Incluye hasta 10 familiares vinculados, alertas ilimitadas y todas las funcionalidades de la aplicación.\n\nLos planes de suscripción (Familiar y Premium) incluyen un período de prueba gratuita de 7 días. Al vencer dicho período, la suscripción se renueva automáticamente salvo que el usuario la cancele antes desde Google Play → Suscripciones.'],
+          ['2. Condiciones del pago','La App Gratis es de acceso libre y sin costo.\n\nEl Plan Familiar y el Plan Premium corresponden a suscripciones con facturación mensual o anual, según la opción elegida por el usuario. El cobro se realiza a través de Google Play al finalizar el período de prueba gratuita de 7 días, salvo que el usuario cancele antes.\n\nLas suscripciones se renuevan automáticamente al final de cada período contratado. El usuario puede cancelar en cualquier momento desde Google Play → Suscripciones. No se realizan reembolsos por períodos parciales, salvo en los casos reconocidos por la legislación aplicable en la jurisdicción del usuario.'],
+          ['3. Mantenimiento y actualización','Durante cada año de vigencia de la suscripción se realizarán actividades de mantenimiento y actualización de la aplicación. Las actualizaciones podrán incluir mejoras técnicas, correcciones, ajustes de seguridad y nuevas funcionalidades.'],
+          ['4. Reembolsos y derechos del consumidor','Los pagos no serán reembolsables, salvo cuando exista un derecho de devolución, reversión, retracto u otra obligación de reembolso reconocida por la legislación aplicable en la jurisdicción del usuario, o cuando ASSYST determine expresamente lo contrario.'],
+          ['5. Uso responsable de la aplicación','El usuario es el único responsable del uso que realice de la aplicación, de la información que proporcione y de los familiares o contactos que vincule dentro del servicio.\n\nCualquier utilización indebida, incluyendo vigilancia, acoso, activaciones falsas o cualquier finalidad distinta a la atención de situaciones de emergencia, será responsabilidad exclusiva del usuario.'],
+          ['6. Ubicación GPS','La ubicación GPS se obtiene en el momento en que el usuario activa voluntariamente una alerta de emergencia. La aplicación no proporciona seguimiento continuo ni vigilancia permanente.'],
+          ['7. Naturaleza del servicio y servicios oficiales','Botón de Emergencia es una herramienta tecnológica de apoyo y comunicación. No constituye un servicio de atención de emergencias, rescate, ambulancia, policía, bomberos, vigilancia privada ni monitoreo profesional.\n\nAnte cualquier situación de emergencia, el usuario deberá comunicarse directamente con los servicios oficiales disponibles en su país o región.'],
+          ['8. Requisitos técnicos y plan de datos','Para que la aplicación funcione correctamente, el usuario debe contar con un plan de datos activo. ASSYST no proporciona ni financia planes de datos, internet ni servicios de comunicación.\n\nEl funcionamiento también depende de: señal GPS, batería, permisos concedidos al dispositivo, configuración del sistema operativo y disponibilidad de los servicios de terceros.'],
+          ['9. Tratamiento de datos personales','El tratamiento de los datos personales se realizará de acuerdo con la Política de Privacidad de Botón de Emergencia, que forma parte de las condiciones aplicables al uso del servicio.'],
+          ['10. Responsabilidad sobre los contactos vinculados','El usuario es responsable de los familiares o contactos que vincule al servicio y de las autorizaciones que les otorgue mediante las funcionalidades de la aplicación.'],
+          ['11. Suspensión o restricción del servicio','ASSYST podrá restringir o suspender el acceso al servicio cuando existan indicios de utilización fraudulenta, abusiva, ilegal o contraria a este Contrato de Servicio.'],
+          ['12. Propiedad intelectual','La aplicación Botón de Emergencia, su diseño, estructura, contenidos, software, funcionalidades, marcas y demás componentes son propiedad de ASSYST o se utilizan con las autorizaciones correspondientes. El usuario recibe una autorización de uso limitada al funcionamiento normal del servicio.'],
+          ['13. Soporte y contacto','Para consultas, soporte o solicitudes relacionadas con el servicio:\n\nASSYST · assyst2021@ssthechofacil.com'],
+          ['14. Modificaciones del contrato','ASSYST podrá actualizar o modificar este Contrato de Servicio cuando resulte necesario. Las modificaciones relevantes serán comunicadas o puestas a disposición del usuario por los medios disponibles en la aplicación.'],
+          ['15. Legislación aplicable','Este Contrato de Servicio se regirá por la legislación vigente aplicable según la jurisdicción del usuario, sin perjuicio de los derechos que correspondan al consumidor conforme a la normativa local.'],
+          ['16. Aceptación','Al seleccionar «Leído y de acuerdo», el usuario declara que ha tenido acceso a este Contrato de Servicio, que lo ha leído, comprendido y aceptado, junto con los Términos de Uso, Aviso Legal y Política de Privacidad.'],
+        ]
+      },
+      {
+        id: 'aviso',
+        eyebrow: 'ASSYST · Botón de Emergencia',
+        title: 'Aviso Legal',
+        meta: [['Titular','ASSYST'],['Contacto','assyst2021@ssthechofacil.com'],['Última actualización','10 de septiembre de 2026']],
+        sections: [
+          ['1. Titular del servicio','Botón de Emergencia es una aplicación desarrollada y operada por ASSYST. Para cualquier consulta legal puede contactarnos en: assyst2021@ssthechofacil.com'],
+          ['2. Objeto','El presente Aviso Legal regula el acceso y uso de Botón de Emergencia. El uso de la aplicación implica la aceptación de este aviso, así como de los Términos de Uso, la Política de Privacidad y el Contrato de Servicio.'],
+          ['3. Exclusión de responsabilidad','ASSYST no garantiza la disponibilidad continua del servicio ni que las alertas sean transmitidas en todas las circunstancias técnicas posibles. La aplicación es una herramienta de apoyo y no sustituye los servicios oficiales de emergencia.\n\nASSYST no será responsable por daños derivados del uso indebido de la aplicación, por fallos técnicos ajenos a su control, ni por la falta de respuesta de terceros ante una alerta enviada.'],
+          ['4. Propiedad intelectual','El diseño, código, textos, logotipos y funcionalidades de la aplicación son propiedad de ASSYST o se utilizan con las autorizaciones correspondientes. Queda prohibida su reproducción, distribución o uso sin autorización expresa.'],
+          ['5. Legislación y contacto','Este Aviso Legal se rige por la legislación vigente aplicable según la jurisdicción del usuario.\n\nÚltima actualización: 10 de septiembre de 2026\nASSYST · assyst2021@ssthechofacil.com'],
+        ]
+      },
+      {
+        id: 'eliminar',
+        eyebrow: 'ASSYST · Botón de Emergencia',
+        title: 'Eliminar Cuenta y Datos',
+        meta: [['Responsable','ASSYST'],['Contacto','assyst2021@ssthechofacil.com'],['Plazo de respuesta','Máximo 30 días hábiles'],['Última actualización','21 de septiembre de 2026']],
+        sections: [
+          ['Tu derecho a eliminar tu cuenta','Puedes solicitar en cualquier momento la eliminación completa de tu cuenta y todos los datos personales asociados a ella, incluyendo tu perfil, contactos de emergencia, historial de alertas y cualquier otra información almacenada en nuestros servidores.\n\nLa eliminación de la cuenta es permanente e irreversible. Una vez procesada, no podrás recuperar tu cuenta ni ninguno de los datos asociados.'],
+          ['Cómo solicitar la eliminación','Envía un correo electrónico a <strong>assyst2021@ssthechofacil.com</strong> con el asunto:\n\n<strong>"Solicitud de eliminación de cuenta"</strong>\n\nIncluye en el mensaje:\n• El correo electrónico con el que te registraste en la app\n• Tu nombre completo\n• Motivo de la solicitud (opcional)\n\nProcesaremos tu solicitud en un plazo máximo de <strong>30 días hábiles</strong> y te confirmaremos por correo cuando la eliminación haya sido completada.'],
+          ['Qué datos se eliminan','Al eliminar tu cuenta se borran permanentemente:\n• Perfil de usuario (nombre, correo, contraseña)\n• Contactos de emergencia registrados\n• Historial de alertas enviadas\n• Configuración y preferencias de la app\n• Datos de ubicación almacenados\n\n<strong>Datos que se conservan temporalmente:</strong> registros de transacciones de pago se conservan por el período legalmente requerido antes de ser eliminados definitivamente.'],
+          ['Eliminar datos sin eliminar la cuenta','Si deseas eliminar solo algunos de tus datos sin cerrar tu cuenta, puedes hacerlo directamente desde la sección de perfil dentro de la app, o solicitarlo por correo indicando qué datos específicos deseas eliminar.'],
+        ]
+      },
+    ]
+  },
 
-tabs.forEach(btn => {
+  en: {
+    brandSub: 'ASSYST · Legal Documents',
+    tabs: ['Privacy Policy','Terms of Use','Service Contract','Legal Notice','Delete Account'],
+    docs: [
+      {
+        id: 'privacidad',
+        eyebrow: 'ASSYST · Emergency Button',
+        title: 'Privacy Policy',
+        meta: [['Controller','ASSYST'],['Application','Emergency Button'],['Contact','assyst2021@ssthechofacil.com'],['Last updated','September 10, 2026']],
+        sections: [
+          ['1. Introduction','This Privacy Policy establishes the conditions under which ASSYST collects, uses, stores and protects the personal information of users of Emergency Button, an application created and developed by ASSYST. Its purpose is to inform clearly and transparently what information is requested, how it is used and what options are available to the user.'],
+          ['2. Data controller and contact','ASSYST is responsible for the application and for managing the personal information that users provide directly through registration and use of its features.\n\nFor inquiries related to privacy, data processing, information updates or account deletion requests:\n\nEmail: assyst2021@ssthechofacil.com'],
+          ['3. Information we collect','When registering and using the application, we may collect:\n\n· Full name.\n· Username.\n· Email address.\n· Phone number.\n· Information necessary to manage and maintain the account.\n· GPS location, only when the user voluntarily activates an alert function.\n\nASSYST does not collect GPS location on a permanent basis.'],
+          ['4. How we use the information','· Create, identify and manage the user\'s account.\n· Allow access to and use of the application\'s features.\n· Facilitate login and password recovery.\n· Facilitate contact between the user and linked family members.\n· Send GPS location to linked family members when the user activates an alert.\n· Maintain the security, integrity and correct operation of the application.\n· Comply with applicable legal obligations.'],
+          ['5. GPS location and alert functions','The application may use GPS location exclusively to support its alert functions, when the user voluntarily presses the corresponding button.\n\nGPS location will not be used as a mechanism for surveillance, tracking, permanent monitoring or for purposes related to romantic relationships, infidelity, jealousy or couple conflicts.\n\nRESPONSIBILITY: The use of location is the user\'s responsibility. ASSYST is not responsible for improper use of location information.'],
+          ['6. Data sharing and access','ASSYST does not sell users\' personal data. When an alert is activated, the location may be made available to family members or contacts that the user has linked within the application.'],
+          ['7. Storage and security','Data is stored on secure servers with encryption in transit and access controls that ensure each user can only access their own information.\n\nASSYST implements reasonable technical measures to protect personal information. No technology system can guarantee an absolutely zero risk against unauthorized access.'],
+          ['8. Information retention','Personal information will be retained for as long as necessary to maintain the account and provide the application\'s features, as well as to meet legal obligations.'],
+          ['9. User rights','· Know what personal information is being processed.\n· Request the update or correction of incorrect information.\n· Request the deletion of your account and personal data.\n· Submit inquiries or complaints related to the processing of your data.'],
+          ['10. Data deletion or update','The user may request the deletion of their account by writing to assyst2021@ssthechofacil.com. The request will be processed within a maximum period of fifteen (15) business days.'],
+          ['11. Minor\'s data','The application is not designed to deliberately request personal information from minors without the authorizations required by applicable regulations.'],
+          ['12. Policy updates','ASSYST may update this Policy when necessary. Users are recommended to review it periodically.\n\nLast updated: September 10, 2026'],
+        ]
+      },
+      {
+        id: 'terminos',
+        eyebrow: 'ASSYST · Emergency Button',
+        title: 'Terms of Use',
+        meta: [['Application','Emergency Button'],['Contact','assyst2021@ssthechofacil.com'],['Last updated','September 10, 2026']],
+        sections: [
+          ['1. Definitions','a) "User": person who registers, accesses or uses Emergency Button.\nb) "Application": Emergency Button, its features, updates and related components.\nc) "Linked contacts": family members or persons the user incorporates and authorizes within the application.\nd) "Emergency alert": voluntary activation performed by the user through the corresponding feature.\ne) "Location": GPS location information obtained when the user voluntarily activates an alert.'],
+          ['2. Acceptance of terms','Access to and use of Emergency Button implies acceptance of these Terms and the Privacy Policy. If the user does not agree, they must refrain from using the application.'],
+          ['3. Registration and account','The account is for personal use. The user agrees to provide truthful information and to protect their access credentials.'],
+          ['4. User responsibility','The user is solely responsible for the use they make of the application. Any improper use, including surveillance, tracking, harassment or use of location for purposes other than an emergency, will be the exclusive responsibility of the user.'],
+          ['5. Purpose of the alert','The alert should only be activated when there is a real situation that justifies its use. The user must avoid false, fraudulent or abusive activations.'],
+          ['6. Not a replacement for official services','Emergency Button does not replace official emergency services. In any emergency, the user must immediately contact the emergency services available in their country or region.\n\nThe application is only a complementary technological mechanism.'],
+          ['7. Connectivity and operation','In areas without coverage, with insufficient GPS signal, depleted battery or restricted permissions, an alert may not be sent or may not display the location correctly. ASSYST does not guarantee immediate transmission in all circumstances.'],
+          ['8. Prohibited conduct','The user may not use the application to:\n\na) Improperly monitor, track or control another person.\nb) Use location for romantic purposes, jealousy or personal investigation unrelated to an emergency.\nc) Harass, threaten or cause harm to other people.\nd) Make false or fraudulent activations.\ne) Impersonate another person.\nf) Attempt to breach technical components of the application.\ng) Use the application for unlawful activities.'],
+          ['9. Intellectual property','The application, its design, texts, software, trademarks and logos belong to ASSYST. The user receives only a limited authorization to use the service in accordance with these Terms.'],
+          ['10. Service limitation','Activating an alert does not guarantee that contacts, authorities or other persons will respond within a specific time or that an effective intervention will occur. In risk situations, the user must also use the official means available.'],
+          ['11. Terms updates','ASSYST may modify these Terms when necessary. Continued use of the application after changes may be considered acceptance of the updated Terms.\n\nLast updated: September 10, 2026'],
+          ['12. Applicable legislation and contact','These Terms are governed by the applicable legislation according to the user\'s jurisdiction.\n\nASSYST · Emergency Button · assyst2021@ssthechofacil.com'],
+        ]
+      },
+      {
+        id: 'contrato',
+        eyebrow: 'ASSYST · Emergency Button',
+        title: 'Service Contract',
+        meta: [['Application','Emergency Button'],['Contact','assyst2021@ssthechofacil.com'],['Last updated','September 26, 2026']],
+        sections: [
+          ['1. Term and service plans','The service is offered in three modalities:\n\n<strong>Free App:</strong> Free access. Includes 1 linked family member and up to 6 alerts per month.\n\n<strong>Family Plan:</strong> Monthly or annual subscription. Includes up to 5 linked family members, unlimited alerts and real-time map.\n\n<strong>Premium Plan:</strong> Monthly or annual subscription. Includes up to 10 linked family members, unlimited alerts and all application features.\n\nSubscription plans (Family and Premium) include a 7-day free trial period. At the end of that period, the subscription renews automatically unless the user cancels beforehand through Google Play → Subscriptions.'],
+          ['2. Payment conditions','The Free App is available at no cost.\n\nThe Family Plan and Premium Plan are subscriptions billed monthly or annually, according to the option chosen by the user. The charge is processed through Google Play at the end of the 7-day free trial period, unless the user cancels beforehand.\n\nSubscriptions renew automatically at the end of each contracted period. The user may cancel at any time through Google Play → Subscriptions. No refunds are issued for partial periods, except in cases recognized by the applicable legislation in the user\'s jurisdiction.'],
+          ['3. Maintenance and updates','During each year of the subscription, maintenance and update activities will be carried out on the application. Updates may include technical improvements, fixes, security adjustments and new features.'],
+          ['4. Refunds and consumer rights','Payments made by the user will not be refundable, except where there is a right of return, reversal, withdrawal or other refund obligation recognized by applicable legislation in the user\'s jurisdiction, or when ASSYST expressly determines otherwise.'],
+          ['5. Responsible use of the application','The user is solely responsible for the use they make of the application, the information they provide and the family members or contacts they link within the service.\n\nAny improper use, including surveillance, harassment, false activations or any purpose other than attending to emergency situations, will be the exclusive responsibility of the user.'],
+          ['6. GPS location','GPS location is obtained at the moment the user voluntarily activates an emergency alert. The application does not provide continuous tracking or permanent surveillance.'],
+          ['7. Nature of the service and official emergency services','Emergency Button is a technological support and communication tool. It does not constitute an emergency response service, rescue, ambulance, police, fire department, private security or professional monitoring.\n\nIn any emergency situation, the user must directly contact the official services available in their country or region.'],
+          ['8. Technical requirements and data plan','For the application to function correctly, the user must have an active data plan. ASSYST does not provide or finance data plans, internet or communication services.\n\nOperation also depends on: GPS signal, battery, permissions granted to the device, operating system configuration and availability of third-party services.'],
+          ['9. Personal data processing','Personal data processing will be carried out in accordance with the Privacy Policy of Emergency Button, which forms part of the conditions applicable to the use of the service.'],
+          ['10. Responsibility for linked contacts','The user is responsible for the family members or contacts they link to the service and the authorizations they grant through the application\'s features.'],
+          ['11. Suspension or restriction of service','ASSYST may restrict or suspend access to the service when there are indications of fraudulent, abusive, illegal or contract-contrary use.'],
+          ['12. Intellectual property','The Emergency Button application, its design, structure, content, software, features, trademarks and other components are the property of ASSYST or are used with the corresponding authorizations. The user receives a limited authorization for use within the normal operation of the service.'],
+          ['13. Support and contact','For inquiries, support or service-related requests:\n\nASSYST · assyst2021@ssthechofacil.com'],
+          ['14. Contract updates','ASSYST may update or modify this Service Contract when necessary. Relevant changes will be communicated or made available to the user through the means available in the application.'],
+          ['15. Applicable legislation','This Service Contract will be governed by the applicable current legislation according to the user\'s jurisdiction, without prejudice to the consumer rights corresponding under local regulations.'],
+          ['16. Acceptance','By selecting "Read and agreed", the user declares that they have had access to this Service Contract, have read, understood and accepted it, together with the Terms of Use, Legal Notice and Privacy Policy.'],
+        ]
+      },
+      {
+        id: 'aviso',
+        eyebrow: 'ASSYST · Emergency Button',
+        title: 'Legal Notice',
+        meta: [['Owner','ASSYST'],['Contact','assyst2021@ssthechofacil.com'],['Last updated','September 10, 2026']],
+        sections: [
+          ['1. Service owner','Emergency Button is an application developed and operated by ASSYST. For any legal inquiries you may contact us at: assyst2021@ssthechofacil.com'],
+          ['2. Purpose','This Legal Notice governs access to and use of Emergency Button. Use of the application implies acceptance of this notice, as well as the Terms of Use, Privacy Policy and Service Contract.'],
+          ['3. Disclaimer of liability','ASSYST does not guarantee continuous availability of the service or that alerts will be transmitted in all technically possible circumstances. The application is a support tool and does not replace the official emergency services available in the user\'s country or region.\n\nASSYST will not be liable for damages arising from improper use of the application, technical failures beyond its control, or lack of response from third parties to a sent alert.'],
+          ['4. Intellectual property','The design, code, texts, logos and features of the application are the property of ASSYST or are used with the corresponding authorizations. Their reproduction, distribution or use without express authorization is prohibited.'],
+          ['5. Legislation and contact','This Legal Notice is governed by the applicable current legislation according to the user\'s jurisdiction.\n\nLast updated: September 10, 2026\nASSYST · assyst2021@ssthechofacil.com'],
+        ]
+      },
+      {
+        id: 'eliminar',
+        eyebrow: 'ASSYST · Emergency Button',
+        title: 'Delete Account and Data',
+        meta: [['Controller','ASSYST'],['Contact','assyst2021@ssthechofacil.com'],['Response time','Max. 30 business days'],['Last updated','September 21, 2026']],
+        sections: [
+          ['Your right to delete your account','You may request at any time the complete deletion of your account and all personal data associated with it, including your profile, emergency contacts, alert history and any other information stored on our servers.\n\nAccount deletion is permanent and irreversible. Once processed, you will not be able to recover your account or any of the associated data.'],
+          ['How to request deletion','Send an email to <strong>assyst2021@ssthechofacil.com</strong> with the subject:\n\n<strong>"Account deletion request"</strong>\n\nInclude in the message:\n• The email address you used to register in the app\n• Your full name\n• Reason for the request (optional)\n\nWe will process your request within a maximum of <strong>30 business days</strong> and confirm by email when the deletion has been completed.'],
+          ['What data is deleted','When you delete your account the following are permanently removed:\n• User profile (name, email, password)\n• Registered emergency contacts\n• Alert history\n• App settings and preferences\n• Stored location data\n\n<strong>Data retained temporarily:</strong> payment transaction records are kept for the legally required period before being permanently deleted.'],
+          ['Delete data without deleting your account','If you wish to delete only some of your data without closing your account, you can do so directly from the profile section within the app, or request it by email specifying which specific data you wish to delete.'],
+        ]
+      },
+    ]
+  },
+
+  pt: {
+    brandSub: 'ASSYST · Documentos Legais',
+    tabs: ['Política de Privacidade','Termos de Uso','Contrato de Serviço','Aviso Legal','Excluir Conta'],
+    docs: [
+      {
+        id: 'privacidad',
+        eyebrow: 'ASSYST · Botão de Emergências',
+        title: 'Política de Privacidade',
+        meta: [['Responsável','ASSYST'],['Aplicativo','Botão de Emergências'],['Contato','assyst2021@ssthechofacil.com'],['Última atualização','10 de setembro de 2026']],
+        sections: [
+          ['1. Introdução','Esta Política de Privacidade estabelece as condições sob as quais a ASSYST coleta, usa, armazena e protege as informações pessoais dos usuários do Botão de Emergências, aplicativo criado e desenvolvido pela ASSYST. Seu objetivo é informar de forma clara e transparente quais informações são solicitadas, para que são utilizadas e quais opções estão disponíveis para o usuário.'],
+          ['2. Responsável pelo tratamento e contato','A ASSYST é responsável pelo aplicativo e pela gestão das informações pessoais que os usuários fornecem diretamente por meio do registro e uso de suas funcionalidades.\n\nPara consultas relacionadas à privacidade, tratamento de dados, atualização de informações ou solicitações de exclusão de conta:\n\nE-mail: assyst2021@ssthechofacil.com'],
+          ['3. Informações que coletamos','Ao se registrar e usar o aplicativo, podemos coletar:\n\n· Nome completo.\n· Nome de usuário.\n· Endereço de e-mail.\n· Número de telefone.\n· Informações necessárias para gerenciar e manter a conta.\n· Localização GPS, somente quando o usuário ativa voluntariamente uma função de alerta.\n\nA ASSYST não coleta a localização GPS de forma permanente.'],
+          ['4. Como usamos as informações','· Criar, identificar e administrar a conta do usuário.\n· Permitir o acesso e uso das funcionalidades do aplicativo.\n· Facilitar o login e a recuperação de senha.\n· Facilitar o contato entre o usuário e os familiares vinculados.\n· Enviar a localização GPS aos familiares vinculados quando o usuário ativa um alerta.\n· Manter a segurança, integridade e correto funcionamento do aplicativo.\n· Cumprir as obrigações legais aplicáveis.'],
+          ['5. Localização GPS e funções de alerta','O aplicativo pode usar a localização GPS exclusivamente para dar suporte às suas funções de alerta, quando o usuário pressiona voluntariamente o botão correspondente.\n\nA localização GPS não será usada como mecanismo de vigilância, rastreamento, monitoramento permanente ou para fins relacionados a relacionamentos amorosos, infidelidade, ciúmes ou conflitos de casal.\n\nRESPONSABILIDADE: O uso da localização é responsabilidade do usuário. A ASSYST não se responsabiliza pelo uso indevido das informações de localização.'],
+          ['6. Compartilhamento e acesso aos dados','A ASSYST não vende os dados pessoais dos usuários. Quando um alerta é ativado, a localização poderá ser disponibilizada aos familiares ou contatos que o próprio usuário tenha vinculado dentro do aplicativo.'],
+          ['7. Armazenamento e segurança','Os dados são armazenados em servidores seguros com criptografia em trânsito e controles de acesso que garantem que cada usuário só possa acessar suas próprias informações.\n\nA ASSYST implementa medidas técnicas razoáveis para proteger as informações pessoais. Nenhum sistema tecnológico pode garantir risco absolutamente nulo contra acessos não autorizados.'],
+          ['8. Retenção de informações','As informações pessoais serão mantidas pelo tempo necessário para manter a conta e fornecer as funcionalidades do aplicativo, bem como para atender às obrigações legais.'],
+          ['9. Direitos do usuário','· Saber quais informações pessoais estão sendo tratadas.\n· Solicitar a atualização ou correção de informações incorretas.\n· Solicitar a exclusão de sua conta e dados pessoais.\n· Apresentar consultas ou reclamações relacionadas ao tratamento de seus dados.'],
+          ['10. Exclusão ou atualização de dados','O usuário poderá solicitar a exclusão de sua conta escrevendo para assyst2021@ssthechofacil.com. A solicitação será processada em um prazo máximo de quinze (15) dias úteis.'],
+          ['11. Dados de menores de idade','O aplicativo não foi projetado para solicitar deliberadamente informações pessoais de menores de idade sem as autorizações exigidas pela regulamentação aplicável.'],
+          ['12. Atualizações da política','A ASSYST poderá atualizar esta Política quando necessário. Recomenda-se aos usuários que a revisem periodicamente.\n\nÚltima atualização: 10 de setembro de 2026'],
+        ]
+      },
+      {
+        id: 'terminos',
+        eyebrow: 'ASSYST · Botão de Emergências',
+        title: 'Termos de Uso',
+        meta: [['Aplicativo','Botão de Emergências'],['Contato','assyst2021@ssthechofacil.com'],['Última atualização','10 de setembro de 2026']],
+        sections: [
+          ['1. Definições','a) "Usuário": pessoa que se registra, acessa ou usa o Botão de Emergências.\nb) "Aplicativo": Botão de Emergências, suas funcionalidades, atualizações e componentes relacionados.\nc) "Contatos vinculados": familiares ou pessoas que o usuário incorpora e autoriza dentro do aplicativo.\nd) "Alerta de emergência": ativação voluntária realizada pelo usuário por meio da funcionalidade correspondente.\ne) "Localização": informação de localização GPS obtida quando o usuário ativa voluntariamente um alerta.'],
+          ['2. Aceitação dos termos','O acesso e o uso do Botão de Emergências implica a aceitação destes Termos e da Política de Privacidade. Se o usuário não concordar, deverá se abster de usar o aplicativo.'],
+          ['3. Registro e conta','A conta é de uso pessoal. O usuário se compromete a fornecer informações verdadeiras e a proteger suas credenciais de acesso.'],
+          ['4. Responsabilidade do usuário','O usuário é o único responsável pelo uso que fizer do aplicativo. Qualquer uso indevido, incluindo vigilância, rastreamento, assédio ou uso da localização para fins diferentes de uma emergência, será responsabilidade exclusiva do usuário.'],
+          ['5. Finalidade do alerta','O alerta deve ser ativado somente quando houver uma situação real que justifique seu uso. O usuário deve evitar ativações falsas, fraudulentas ou abusivas.'],
+          ['6. Não substitui serviços oficiais','O Botão de Emergências não substitui os serviços oficiais de emergência. Em qualquer emergência, o usuário deve entrar em contato imediatamente com os serviços de emergência disponíveis em seu país ou região.\n\nO aplicativo é apenas um mecanismo tecnológico complementar.'],
+          ['7. Conectividade e funcionamento','Em áreas sem cobertura, com sinal GPS insuficiente, bateria descarregada ou permissões restritas, um alerta pode não ser enviado ou não exibir corretamente a localização. A ASSYST não garante a transmissão imediata em todas as circunstâncias.'],
+          ['8. Condutas proibidas','O usuário não poderá usar o aplicativo para:\n\na) Vigiar, rastrear ou controlar indevidamente outra pessoa.\nb) Usar a localização para fins românticos, ciúmes ou investigação pessoal alheia a uma emergência.\nc) Assediar, ameaçar ou causar danos a outras pessoas.\nd) Realizar ativações falsas ou fraudulentas.\ne) Falsificar a identidade de outra pessoa.\nf) Tentar comprometer componentes técnicos do aplicativo.\ng) Usar o aplicativo para atividades ilícitas.'],
+          ['9. Propriedade intelectual','O aplicativo, seu design, textos, software, marcas e logotipos pertencem à ASSYST. O usuário recebe apenas uma autorização limitada para usar o serviço de acordo com estes Termos.'],
+          ['10. Limitação do serviço','A ativação de um alerta não garante que os contatos, autoridades ou outras pessoas respondam em um tempo determinado ou que ocorra uma intervenção efetiva. Em situações de risco, o usuário também deve usar os meios oficiais disponíveis.'],
+          ['11. Atualizações dos termos','A ASSYST poderá modificar estes Termos quando necessário. O uso continuado do aplicativo após as alterações poderá ser considerado aceitação dos Termos atualizados.\n\nÚltima atualização: 10 de setembro de 2026'],
+          ['12. Legislação aplicável e contato','Estes Termos são regidos pela legislação aplicável de acordo com a jurisdição do usuário.\n\nASSYST · Botão de Emergências · assyst2021@ssthechofacil.com'],
+        ]
+      },
+      {
+        id: 'contrato',
+        eyebrow: 'ASSYST · Botão de Emergências',
+        title: 'Contrato de Serviço',
+        meta: [['Aplicativo','Botão de Emergências'],['Contato','assyst2021@ssthechofacil.com'],['Última atualização','26 de setembro de 2026']],
+        sections: [
+          ['1. Vigência e planos de serviço','O serviço é oferecido em três modalidades:\n\n<strong>App Gratuito:</strong> Acesso sem custo. Inclui 1 familiar vinculado e até 6 alertas por mês.\n\n<strong>Plano Familiar:</strong> Assinatura mensal ou anual. Inclui até 5 familiares vinculados, alertas ilimitados e mapa em tempo real.\n\n<strong>Plano Premium:</strong> Assinatura mensal ou anual. Inclui até 10 familiares vinculados, alertas ilimitados e todas as funcionalidades do aplicativo.\n\nOs planos de assinatura (Familiar e Premium) incluem um período de teste gratuito de 7 dias. Ao término desse período, a assinatura é renovada automaticamente, salvo se o usuário cancelar antes pelo Google Play → Assinaturas.'],
+          ['2. Condições de pagamento','O App Gratuito é de acesso livre e sem custo.\n\nO Plano Familiar e o Plano Premium correspondem a assinaturas com cobrança mensal ou anual, conforme a opção escolhida pelo usuário. A cobrança é processada pelo Google Play ao término do período de teste gratuito de 7 dias, salvo se o usuário cancelar antes.\n\nAs assinaturas são renovadas automaticamente ao final de cada período contratado. O usuário pode cancelar a qualquer momento pelo Google Play → Assinaturas. Não são realizados reembolsos por períodos parciais, salvo nos casos reconhecidos pela legislação aplicável na jurisdição do usuário.'],
+          ['3. Manutenção e atualização','Durante cada ano de vigência da assinatura serão realizadas atividades de manutenção e atualização do aplicativo. As atualizações poderão incluir melhorias técnicas, correções, ajustes de segurança e novas funcionalidades.'],
+          ['4. Reembolsos e direitos do consumidor','Os pagamentos efetuados pelo usuário não serão reembolsáveis, salvo quando existir um direito de devolução, reversão, retratação ou outra obrigação de reembolso reconhecida pela legislação aplicável na jurisdição do usuário, ou quando a ASSYST determinar expressamente o contrário.'],
+          ['5. Uso responsável do aplicativo','O usuário é o único responsável pelo uso que fizer do aplicativo, pelas informações que fornecer e pelos familiares ou contatos que vincular ao serviço.\n\nQualquer uso indevido, incluindo vigilância, assédio, ativações falsas ou qualquer finalidade diferente de atender situações de emergência, será responsabilidade exclusiva do usuário.'],
+          ['6. Localização GPS','A localização GPS é obtida no momento em que o usuário ativa voluntariamente um alerta de emergência. O aplicativo não fornece rastreamento contínuo ou vigilância permanente.'],
+          ['7. Natureza do serviço e serviços oficiais','O Botão de Emergências é uma ferramenta tecnológica de apoio e comunicação. Não constitui um serviço de atendimento de emergências, resgate, ambulância, polícia, bombeiros, segurança privada ou monitoramento profissional.\n\nEm qualquer situação de emergência, o usuário deverá entrar em contato diretamente com os serviços oficiais disponíveis em seu país ou região.'],
+          ['8. Requisitos técnicos e plano de dados','Para que o aplicativo funcione corretamente, o usuário deve ter um plano de dados ativo. A ASSYST não fornece nem financia planos de dados, internet ou serviços de comunicação.\n\nO funcionamento também depende de: sinal GPS, bateria, permissões concedidas ao dispositivo, configuração do sistema operacional e disponibilidade dos serviços de terceiros.'],
+          ['9. Tratamento de dados pessoais','O tratamento dos dados pessoais será realizado de acordo com a Política de Privacidade do Botão de Emergências, que faz parte das condições aplicáveis ao uso do serviço.'],
+          ['10. Responsabilidade sobre os contatos vinculados','O usuário é responsável pelos familiares ou contatos que vincular ao serviço e pelas autorizações que lhes conceder por meio das funcionalidades do aplicativo.'],
+          ['11. Suspensão ou restrição do serviço','A ASSYST poderá restringir ou suspender o acesso ao serviço quando houver indícios de uso fraudulento, abusivo, ilegal ou contrário a este Contrato de Serviço.'],
+          ['12. Propriedade intelectual','O aplicativo Botão de Emergências, seu design, estrutura, conteúdos, software, funcionalidades, marcas e demais componentes são propriedade da ASSYST ou são usados com as autorizações correspondentes. O usuário recebe uma autorização de uso limitada ao funcionamento normal do serviço.'],
+          ['13. Suporte e contato','Para consultas, suporte ou solicitações relacionadas ao serviço:\n\nASSYST · assyst2021@ssthechofacil.com'],
+          ['14. Atualizações do contrato','A ASSYST poderá atualizar ou modificar este Contrato de Serviço quando necessário. As alterações relevantes serão comunicadas ou disponibilizadas ao usuário pelos meios disponíveis no aplicativo.'],
+          ['15. Legislação aplicável','Este Contrato de Serviço será regido pela legislação vigente aplicável de acordo com a jurisdição do usuário, sem prejuízo dos direitos do consumidor correspondentes conforme a regulamentação local.'],
+          ['16. Aceitação','Ao selecionar "Lido e de acordo", o usuário declara ter tido acesso a este Contrato de Serviço, que o leu, entendeu e aceitou, juntamente com os Termos de Uso, Aviso Legal e Política de Privacidade.'],
+        ]
+      },
+      {
+        id: 'aviso',
+        eyebrow: 'ASSYST · Botão de Emergências',
+        title: 'Aviso Legal',
+        meta: [['Titular','ASSYST'],['Contato','assyst2021@ssthechofacil.com'],['Última atualização','10 de setembro de 2026']],
+        sections: [
+          ['1. Titular do serviço','O Botão de Emergências é um aplicativo desenvolvido e operado pela ASSYST. Para qualquer consulta legal você pode nos contatar em: assyst2021@ssthechofacil.com'],
+          ['2. Objeto','Este Aviso Legal regula o acesso e o uso do Botão de Emergências. O uso do aplicativo implica a aceitação deste aviso, bem como dos Termos de Uso, da Política de Privacidade e do Contrato de Serviço.'],
+          ['3. Exclusão de responsabilidade','A ASSYST não garante a disponibilidade contínua do serviço nem que os alertas sejam transmitidos em todas as circunstâncias técnicas possíveis. O aplicativo é uma ferramenta de apoio e não substitui os serviços oficiais de emergência.\n\nA ASSYST não será responsável por danos decorrentes do uso indevido do aplicativo, falhas técnicas fora de seu controle ou falta de resposta de terceiros a um alerta enviado.'],
+          ['4. Propriedade intelectual','O design, código, textos, logotipos e funcionalidades do aplicativo são propriedade da ASSYST ou são usados com as autorizações correspondentes. É proibida sua reprodução, distribuição ou uso sem autorização expressa.'],
+          ['5. Legislação e contato','Este Aviso Legal é regido pela legislação vigente aplicável de acordo com a jurisdição do usuário.\n\nÚltima atualização: 10 de setembro de 2026\nASSYST · assyst2021@ssthechofacil.com'],
+        ]
+      },
+      {
+        id: 'eliminar',
+        eyebrow: 'ASSYST · Botão de Emergências',
+        title: 'Excluir Conta e Dados',
+        meta: [['Responsável','ASSYST'],['Contato','assyst2021@ssthechofacil.com'],['Prazo de resposta','Máximo 30 dias úteis'],['Última atualização','21 de setembro de 2026']],
+        sections: [
+          ['Seu direito de excluir sua conta','Você pode solicitar a qualquer momento a exclusão completa de sua conta e todos os dados pessoais associados a ela, incluindo seu perfil, contatos de emergência, histórico de alertas e qualquer outra informação armazenada em nossos servidores.\n\nA exclusão da conta é permanente e irreversível. Uma vez processada, você não poderá recuperar sua conta nem nenhum dos dados associados.'],
+          ['Como solicitar a exclusão','Envie um e-mail para <strong>assyst2021@ssthechofacil.com</strong> com o assunto:\n\n<strong>"Solicitação de exclusão de conta"</strong>\n\nInclua na mensagem:\n• O endereço de e-mail com o qual você se registrou no app\n• Seu nome completo\n• Motivo da solicitação (opcional)\n\nProcessaremos sua solicitação em um prazo máximo de <strong>30 dias úteis</strong> e confirmaremos por e-mail quando a exclusão tiver sido concluída.'],
+          ['Quais dados são excluídos','Ao excluir sua conta, os seguintes itens são removidos permanentemente:\n• Perfil do usuário (nome, e-mail, senha)\n• Contatos de emergência registrados\n• Histórico de alertas enviados\n• Configurações e preferências do app\n• Dados de localização armazenados\n\n<strong>Dados retidos temporariamente:</strong> registros de transações de pagamento são mantidos pelo período legalmente exigido antes de serem excluídos definitivamente.'],
+          ['Excluir dados sem excluir a conta','Se desejar excluir apenas alguns de seus dados sem fechar sua conta, você pode fazê-lo diretamente na seção de perfil dentro do app, ou solicitá-lo por e-mail especificando quais dados específicos deseja excluir.'],
+        ]
+      },
+    ]
+  }
+};
+
+const docIds = ['privacidad','terminos','contrato','aviso','eliminar'];
+let currentLang = 'es';
+let currentDoc = 'privacidad';
+
+function renderPage(lang) {
+  const data = CONTENT[lang];
+  document.documentElement.lang = lang;
+  document.getElementById('brand-sub').textContent = data.brandSub;
+
+  // Tabs
+  const tabsBar = document.getElementById('tabs-bar');
+  tabsBar.innerHTML = data.tabs.map((label, i) => {
+    const id = docIds[i];
+    const active = id === currentDoc ? ' active' : '';
+    const sel = id === currentDoc ? 'true' : 'false';
+    return `<button class="tab-btn${active}" role="tab" aria-selected="${sel}" data-doc="${id}">${label}</button>`;
+  }).join('');
+
+  tabsBar.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentDoc = btn.dataset.doc;
+      renderPage(currentLang);
+      try { localStorage.setItem('be-tab', currentDoc); } catch(_){}
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  // Docs
+  const main = document.getElementById('main-content');
+  main.innerHTML = data.docs.map(doc => {
+    const active = doc.id === currentDoc ? ' active' : '';
+    const metaRows = doc.meta.map(([k,v]) => `<div class="meta-row"><strong>${k}:</strong> ${v}</div>`).join('');
+    const sections = doc.sections.map(([title, body]) =>
+      `<div class="section-card"><div class="section-title">${title}</div><div class="section-body">${body}</div></div>`
+    ).join('');
+    return `
+<article id="${doc.id}" class="doc${active}" role="tabpanel">
+  <div class="doc-eyebrow">${doc.eyebrow}</div>
+  <h1 class="doc-title">${doc.title}</h1>
+  <div class="meta-box">${metaRows}</div>
+  <div class="sections">${sections}</div>
+</article>`;
+  }).join('');
+
+  main.innerHTML += `<footer class="page-footer">ASSYST · assyst2021@ssthechofacil.com</footer>`;
+}
+
+// Lang buttons
+document.querySelectorAll('.lang-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    const target = btn.dataset.doc;
-    tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
-    docs.forEach(d => d.classList.remove('active'));
+    currentLang = btn.dataset.lang;
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    btn.setAttribute('aria-selected','true');
-    document.getElementById(target).classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    try { localStorage.setItem('be-tab', target); } catch(_) {}
+    renderPage(currentLang);
+    try { localStorage.setItem('be-lang', currentLang); } catch(_){}
   });
 });
 
+// Init
 try {
-  const saved = localStorage.getItem('be-tab');
-  if (saved) document.querySelector('[data-doc="' + saved + '"]')?.click();
-} catch(_) {}
-</script>
+  const savedLang = localStorage.getItem('be-lang');
+  if (savedLang && CONTENT[savedLang]) {
+    currentLang = savedLang;
+    document.querySelectorAll('.lang-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === currentLang);
+    });
+  }
+  const savedTab = localStorage.getItem('be-tab');
+  if (savedTab && docIds.includes(savedTab)) currentDoc = savedTab;
+} catch(_){}
 
+renderPage(currentLang);
+</script>
 </body>
 </html>
