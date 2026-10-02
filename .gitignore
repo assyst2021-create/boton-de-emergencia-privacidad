@@ -1,0 +1,3 @@
+# Llaves de firma de la app: NUNCA subirlas (este repositorio es público)
+*.keystore
+*.jks
