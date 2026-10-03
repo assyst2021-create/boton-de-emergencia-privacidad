@@ -1314,6 +1314,19 @@ try {
   if (savedTab && docIds.includes(savedTab)) currentDoc = savedTab;
 } catch(_){}
 
+// Enlace directo a una pestaña y a un idioma: …/?lang=en#eliminar (el de Google Play y el de la app)
+function leerEnlace() {
+  const doc = location.hash.slice(1);
+  if (docIds.includes(doc)) currentDoc = doc;
+  const lang = new URLSearchParams(location.search).get('lang');
+  if (lang && CONTENT[lang]) {
+    currentLang = lang;
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === currentLang));
+  }
+}
+leerEnlace();
+window.addEventListener('hashchange', () => { leerEnlace(); renderPage(currentLang); window.scrollTo({ top: 0 }); });
+
 renderPage(currentLang);
 </script>
 </body>
