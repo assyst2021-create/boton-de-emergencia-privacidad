@@ -201,23 +201,23 @@ const CONTENT = {
      ],
      [
       "2. Qué datos tratamos",
-      "a) Datos de registro: nombre completo, nombre de usuario (@usuario), correo electrónico, número de celular con indicativo de país y contraseña. La contraseña se guarda cifrada: nadie puede verla, ni siquiera nosotros.\n\nb) Datos del servicio: los familiares que vinculas y las solicitudes que envías o recibes; las alertas que envías (tipo de alerta, fecha, hora, ubicación si está disponible y a quién se enviaron); el número de alertas usadas en el mes (plan Gratis) y las alertas que borras de tu historial.\n\nc) Ubicación, solo en estos casos:\n· Al presionar un botón de alerta: se envía tu ubicación de ese momento a los familiares que elijas.\n· En vivo: solo cuando tú decides compartirla, por el tiempo que eliges (de 15 minutos a 24 horas) y con los familiares que eliges. Mientras compartes, la ubicación se envía también con la app cerrada o en segundo plano, y tu celular muestra un aviso permanente que lo indica. Puedes detenerla cuando quieras.\n· Recuperar celular (plan Premium): si tú lo activaste antes en Opciones, un familiar vinculado que tenga tu usuario y contraseña puede pedir que tu celular comparta su ubicación con tu grupo familiar hasta por 24 horas, para ayudarte a encontrarlo si se pierde o te lo roban. Tu celular muestra el aviso permanente de ubicación mientras tanto. Puedes desactivar esta opción cuando quieras.\n· \"Ver mi punto\": tu ubicación se muestra solo en tu pantalla y no se envía a nadie.\n\nd) Datos técnicos: un identificador para enviarte notificaciones (Firebase), el idioma y la zona horaria de la app, la versión instalada, tu plan y los datos de tu suscripción de Google Play (identificador de la compra y fecha de vencimiento). Nunca recibimos los datos de tu tarjeta: el pago lo procesa Google.\n\ne) Dato sensible: el estado \"herido, necesito ayuda médica\" puede revelar información sobre tu salud. Enviarlo es facultativo: no estás obligado a usar ese botón ni a suministrar datos sensibles.\n\nLa app no lee tus contactos, tus mensajes SMS ni tus fotos. Los SMS de alerta salen desde tu celular hacia los números de tus familiares vinculados y su costo depende de tu plan con tu operador."
+      "a) Datos de registro: nombre completo, nombre de usuario (@usuario), correo electrónico, número de celular con indicativo de país y contraseña. La contraseña se guarda cifrada: nadie puede verla, ni siquiera nosotros.\n\nb) Datos del servicio: tu plan (Gratis, Familiar o Premium) y su vigencia; los familiares que vinculas y las solicitudes que envías o recibes; las alertas que envías (tipo de alerta, fecha, hora, ubicación si está disponible y a quién se enviaron) y las alertas automáticas, si las activas; las alertas que borras de tu historial; tus preferencias en la app (por ejemplo, el sonido de las alertas o si activaste Recuperar celular) y, solo en el plan Gratis, cuántas alertas llevas en el mes, para aplicar el límite de 6.\n\nc) Ubicación, solo en estos casos:\n· Al presionar un botón de alerta: se envía tu ubicación de ese momento a los familiares que elijas.\n· En vivo: solo cuando tú decides compartirla, por el tiempo que eliges (de 15 minutos a 24 horas) y con los familiares que eliges. Mientras compartes, la ubicación se envía también con la app cerrada o en segundo plano, y tu celular muestra un aviso permanente que lo indica. Puedes detenerla cuando quieras.\n· Recuperar celular (plan Premium): si tú lo activaste antes en Opciones, un familiar vinculado que tenga tu usuario y contraseña puede pedir que tu celular comparta su ubicación con tu grupo familiar hasta por 24 horas, para ayudarte a encontrarlo si se pierde o te lo roban. Tu celular muestra el aviso permanente de ubicación mientras tanto. Puedes desactivar esta opción cuando quieras.\n· \"Ver mi punto\": tu ubicación se muestra solo en tu pantalla y no se envía a nadie.\n\nd) Datos técnicos: un identificador de tu celular para poder enviarte notificaciones, el idioma y la zona horaria de la app, la versión instalada y, si compras un plan, el comprobante de la suscripción que nos entrega la tienda de aplicaciones (identificador de la compra y fecha de vencimiento). Nunca recibimos los datos de tu tarjeta ni de tu medio de pago: el pago lo procesa la tienda de aplicaciones donde descargaste la app.\n\ne) Dato sensible: el estado \"herido, necesito ayuda médica\" puede revelar información sobre tu salud. Enviarlo es facultativo: no estás obligado a usar ese botón ni a suministrar datos sensibles.\n\nLa app no lee tus contactos, tus mensajes SMS ni tus fotos. Los SMS de alerta salen desde tu celular hacia los números de tus familiares vinculados y su costo depende de tu plan con tu operador."
      ],
      [
       "3. Para qué usamos tus datos",
-      "· Crear y administrar tu cuenta, iniciar sesión y recuperar la contraseña.\n· Enviar tus alertas a los familiares que elijas, por notificación, SMS y, si tú lo decides, por WhatsApp.\n· Mostrar en el mapa la ubicación que compartes y la que tus familiares te comparten.\n· Ayudarte a recuperar tu celular, si activaste esa opción.\n· Gestionar tu plan, los pagos y las renovaciones de Google Play.\n· Mantener la seguridad del servicio y evitar abusos o usos fraudulentos.\n· Atender tus consultas, reclamos y solicitudes.\n· Cumplir obligaciones legales.\n\nNo usamos tus datos para publicidad, no los vendemos y no hacemos perfiles comerciales."
+      "· Crear y administrar tu cuenta, iniciar sesión y recuperar la contraseña.\n· Enviar tus alertas a los familiares que elijas, por notificación, SMS y, si tú lo decides, por WhatsApp.\n· Mostrar en el mapa la ubicación que compartes y la que tus familiares te comparten.\n· Ayudarte a recuperar tu celular, si activaste esa opción.\n· Gestionar tu plan, los pagos y las renovaciones con la tienda de aplicaciones.\n· Mantener la seguridad del servicio y evitar abusos o usos fraudulentos.\n· Atender tus consultas, reclamos y solicitudes.\n· Cumplir obligaciones legales.\n\nNo usamos tus datos para publicidad, no los vendemos y no hacemos perfiles comerciales."
      ],
      [
       "4. Con quién se comparten",
-      "· Tus familiares vinculados: solo reciben lo que tú les envías o compartes, y solo los que elijas.\n· Proveedores que nos prestan servicios tecnológicos (encargados del tratamiento), que solo pueden usar los datos para prestar ese servicio: Supabase (base de datos y cuentas), Google (Firebase Cloud Messaging para las notificaciones y Google Play para los pagos) y OpenStreetMap (dibujo del mapa y dirección aproximada de un punto, sin tu nombre).\n· Cuando tú decides abrir un enlace o enviar un mensaje: Google Maps, WhatsApp y tu operador de telefonía (SMS).\n· Autoridades, solo cuando una ley o una orden judicial lo exija."
+      "· Tus familiares vinculados: solo reciben lo que tú les envías o compartes, y solo los que elijas.\n· Proveedores tecnológicos que nos ayudan a prestar el servicio (encargados del tratamiento), como los de almacenamiento seguro de la información, envío de notificaciones, mapas y la tienda de aplicaciones que procesa los pagos. Solo pueden usar los datos para prestar ese servicio y están obligados a protegerlos y a mantenerlos en reserva.\n· Cuando tú decides abrir un enlace o enviar un mensaje: la aplicación de mapas, la de mensajería que elijas o tu operador de telefonía (SMS).\n· Autoridades, solo cuando una ley o una orden judicial lo exija."
      ],
      [
       "5. Transferencia internacional",
-      "Los servidores de nuestros proveedores pueden estar fuera de Colombia (por ejemplo, en Estados Unidos u otros países). Al aceptar esta política autorizas la transmisión y transferencia internacional de tus datos a esos proveedores, que aplican medidas de seguridad y confidencialidad."
+      "Algunos de nuestros proveedores tecnológicos pueden guardar o procesar la información en servidores ubicados fuera de Colombia. Al aceptar esta política autorizas la transmisión y transferencia internacional de tus datos a esos proveedores, que aplican medidas de seguridad y confidencialidad."
      ],
      [
       "6. Cuánto tiempo los guardamos",
-      "· Alertas: se borran del sistema automáticamente a las 24 horas. También puedes quitarlas antes de tu historial.\n· Ubicación compartida (En vivo y Recuperar celular): deja de verse cuando termina el tiempo elegido o cuando la detienes, y se borra del sistema a más tardar 24 horas después.\n· Registro de las recuperaciones de celular: hasta 30 días, por seguridad.\n· Cuenta y perfil: mientras tu cuenta exista. Si eliminas tu cuenta, se borran tus datos de forma definitiva en un plazo máximo de 30 días, salvo los que una ley obligue a conservar (por ejemplo, los registros de pago que guarda Google Play)."
+      "· Alertas: se borran del sistema automáticamente a las 24 horas. También puedes quitarlas antes de tu historial.\n· Ubicación compartida (En vivo y Recuperar celular): deja de verse cuando termina el tiempo elegido o cuando la detienes, y se borra del sistema a más tardar 24 horas después.\n· Registro de las recuperaciones de celular: hasta 30 días, por seguridad.\n· Cuenta y perfil: mientras tu cuenta exista. Si eliminas tu cuenta, se borran tus datos de forma definitiva en un plazo máximo de 30 días, salvo los que una ley obligue a conservar (por ejemplo, los registros de pago que guarda la tienda de aplicaciones)."
      ],
      [
       "7. Tus derechos",
@@ -294,7 +294,7 @@ const CONTENT = {
      ],
      [
       "6. No reemplaza a los servicios de emergencia",
-      "La app no es un servicio oficial de emergencias, policía, ambulancia, bomberos ni vigilancia privada. En una emergencia llama primero a la línea oficial de tu país (en Colombia, la línea 123). La app es un apoyo adicional para avisar a tu familia."
+      "La app no es un servicio oficial de emergencias, policía, ambulancia, bomberos ni vigilancia privada. En una emergencia llama primero a la línea oficial de emergencias de tu país. La app es un apoyo adicional para avisar a tu familia."
      ],
      [
       "7. Funcionamiento",
@@ -306,7 +306,7 @@ const CONTENT = {
      ],
      [
       "9. Eliminar tu cuenta",
-      "Puedes eliminar tu cuenta cuando quieras desde Opciones → Eliminar cuenta. Se borran tu perfil, tus vínculos familiares, tus alertas y tus ubicaciones, y no se pueden recuperar. Si tienes una suscripción, debes cancelarla en Google Play para que no se te siga cobrando."
+      "Puedes eliminar tu cuenta cuando quieras desde Opciones → Eliminar cuenta. Se borran tu perfil, tus vínculos familiares, tus alertas y tus ubicaciones, y no se pueden recuperar. Si tienes una suscripción, debes cancelarla en la tienda de aplicaciones donde la compraste para que no se te siga cobrando."
      ],
      [
       "10. Propiedad intelectual",
@@ -355,27 +355,27 @@ const CONTENT = {
      ],
      [
       "2. Planes",
-      "Plan Gratis (sin costo):\n· 1 familiar vinculado.\n· Hasta 6 alertas al mes, que se renuevan el día 1 de cada mes.\n· Notificaciones ilimitadas con sonido.\n· Ver en el mapa a los familiares que te comparten su ubicación.\n· Historial que se borra a las 24 horas.\n\nPlan Familiar (suscripción mensual o anual):\n· Hasta 5 familiares vinculados.\n· Alertas ilimitadas.\n· Compartir tu ubicación en vivo.\n· Alerta automática cada 2 horas después de una alerta de peligro o de herido, hasta que la desactives.\n\nPlan Premium (suscripción mensual o anual):\n· Hasta 10 familiares vinculados.\n· Todo lo del Plan Familiar.\n· Recuperar celular."
+      "Plan Gratis (sin costo):\n· Vincula 1 familiar a tu grupo de emergencia.\n· Envía hasta 6 alertas al mes por SMS, WhatsApp y notificación. Se renuevan el día 1 de cada mes.\n· Recibe notificaciones ilimitadas con sonido, incluso cuando no estés mirando el celular.\n· Tu historial de alertas se borra automáticamente a las 24 horas, o cuando tú lo decidas.\n· Ve en el mapa en vivo a los familiares que te compartan su ubicación.\n· Pensada para funcionar incluso con poca señal de datos y de celular.\n\nPlan Familiar (suscripción mensual o anual):\n· Vincula hasta 5 familiares a tu grupo de emergencia.\n· Envía alertas ilimitadas por SMS, WhatsApp y notificación.\n· Recibe notificaciones ilimitadas con sonido, incluso cuando no estés mirando el celular.\n· Tu historial de alertas se borra automáticamente a las 24 horas, o cuando tú lo decidas.\n· Comparte tu ubicación en vivo con tu familia cuando tú lo decidas (hasta 24 horas), con quien elijas, y mira en el mapa la de ellos.\n· Alerta automática: después de una alerta de peligro o de herido, se envía de nuevo cada 2 horas hasta que la desactives.\n· Pensada para funcionar incluso con poca señal de datos y de celular.\n\nPlan Premium (suscripción mensual o anual):\n· Vincula hasta 10 familiares a tu grupo de emergencia.\n· Envía alertas ilimitadas por SMS, WhatsApp y notificación.\n· Recibe notificaciones ilimitadas con sonido, incluso cuando no estés mirando el celular.\n· Tu historial de alertas se borra automáticamente a las 24 horas, o cuando tú lo decidas.\n· Comparte tu ubicación en vivo con tu familia cuando tú lo decidas (hasta 24 horas), con quien elijas, y mira en el mapa la de ellos.\n· Alerta automática: después de una alerta de peligro o de herido, se envía de nuevo cada 2 horas hasta que la desactives.\n· Pensada para funcionar incluso con poca señal de datos y de celular.\n· Recuperar celular: si te lo roban o lo pierdes, un familiar vinculado te ayuda a que tu celular comparta su ubicación hasta por 24 horas."
      ],
      [
       "3. Precio y pago",
-      "El precio de cada plan se muestra en Google Play antes de pagar, en tu moneda y con los impuestos que correspondan. El pago lo procesa Google Play: nunca recibimos los datos de tu tarjeta. Los planes no tienen período de prueba: el cobro se hace al suscribirte."
+      "El precio de cada plan se muestra en la tienda de aplicaciones antes de pagar, en tu moneda y con los impuestos que correspondan. El pago lo procesa la tienda de aplicaciones donde descargaste la app: nunca recibimos los datos de tu tarjeta ni de tu medio de pago. Los planes no tienen período de prueba: el cobro se hace al suscribirte."
      ],
      [
       "4. Renovación automática",
-      "La suscripción se renueva sola al final de cada período (mes o año) y se cobra el mismo valor vigente en Google Play, salvo que la canceles antes de la fecha de renovación."
+      "La suscripción se renueva sola al final de cada período (mes o año) y se cobra el valor vigente en la tienda de aplicaciones, salvo que la canceles antes de la fecha de renovación."
      ],
      [
       "5. Cancelación",
-      "Puedes cancelar cuando quieras en Google Play → Pagos y suscripciones (o desde el enlace de la pantalla de planes). Al cancelar no se te cobra más y conservas los beneficios hasta el último día que ya pagaste."
+      "Puedes cancelar cuando quieras desde la sección de suscripciones de la tienda de aplicaciones donde la compraste, o desde el enlace de la pantalla de planes. Al cancelar no se te cobra más y conservas los beneficios hasta el último día que ya pagaste."
      ],
      [
       "6. Cambio de plan",
-      "Si cambias de plan (por ejemplo, de Familiar a Premium) o de mensual a anual, la nueva suscripción reemplaza a la anterior y Google Play descuenta el tiempo que no usaste. Nunca pagas dos planes al mismo tiempo."
+      "Si cambias de plan (por ejemplo, de Familiar a Premium) o de mensual a anual, la nueva suscripción reemplaza a la anterior y la tienda de aplicaciones ajusta el cobro según el tiempo que no usaste. Nunca pagas dos planes al mismo tiempo."
      ],
      [
       "7. Reembolsos y derechos del consumidor",
-      "Los reembolsos se gestionan por Google Play según sus políticas. Además, se respetan los derechos que te da la Ley 1480 de 2011 (Estatuto del Consumidor), como el derecho de retracto y la reversión del pago, en los casos y condiciones que esa ley establece. Puedes presentar tus peticiones, quejas o reclamos a assyst2021@ssthechofacil.com; también puedes acudir a la Superintendencia de Industria y Comercio."
+      "Los reembolsos se gestionan con la tienda de aplicaciones donde hiciste la compra, según sus políticas. Además, se respetan los derechos que te da la Ley 1480 de 2011 (Estatuto del Consumidor), como el derecho de retracto y la reversión del pago, en los casos y condiciones que esa ley establece. Puedes presentar tus peticiones, quejas o reclamos a assyst2021@ssthechofacil.com; también puedes acudir a la Superintendencia de Industria y Comercio."
      ],
      [
       "8. Qué necesita la app para funcionar",
@@ -399,7 +399,7 @@ const CONTENT = {
      ],
      [
       "13. Cambios del contrato",
-      "Si cambiamos este contrato de forma importante, te avisaremos en la app y te pediremos aceptarlo de nuevo. Los cambios de precio los informa Google Play antes de la siguiente renovación."
+      "Si cambiamos este contrato de forma importante, te avisaremos en la app y te pediremos aceptarlo de nuevo. Los cambios de precio se informan a través de la tienda de aplicaciones antes de la siguiente renovación."
      ],
      [
       "14. Ley aplicable",
@@ -448,7 +448,7 @@ const CONTENT = {
      ],
      [
       "3. No es un servicio de emergencias",
-      "La app es una herramienta de apoyo para avisar a tu familia. No reemplaza a la policía, ambulancias, bomberos ni a la línea oficial de emergencias de tu país (en Colombia, 123)."
+      "La app es una herramienta de apoyo para avisar a tu familia. No reemplaza a la policía, ambulancias, bomberos ni a la línea oficial de emergencias de tu país."
      ],
      [
       "4. Responsabilidad",
@@ -505,11 +505,11 @@ const CONTENT = {
      ],
      [
       "Qué no se elimina",
-      "Los registros de pago los guarda Google Play según sus propias políticas. Las alertas que ya enviaste pudieron llegar como SMS o WhatsApp a los celulares de tus familiares: esos mensajes quedan en sus teléfonos."
+      "Los registros de pago los guarda la tienda de aplicaciones según sus propias políticas. Las alertas que ya enviaste pudieron llegar como SMS o WhatsApp a los celulares de tus familiares: esos mensajes quedan en sus teléfonos."
      ],
      [
       "Tu suscripción",
-      "Eliminar la cuenta no cancela la suscripción de Google Play. Cancélala en Google Play → Pagos y suscripciones para que no se te siga cobrando."
+      "Eliminar la cuenta no cancela la suscripción. Cancélala en la tienda de aplicaciones donde la compraste para que no se te siga cobrando."
      ],
      [
       "Borrar datos sin eliminar la cuenta",
@@ -562,23 +562,23 @@ const CONTENT = {
      ],
      [
       "2. What data we process",
-      "a) Registration data: full name, username (@username), email, mobile number with country code and password. The password is stored encrypted: nobody can see it, not even us.\n\nb) Service data: the family members you link and the requests you send or receive; the alerts you send (type, date, time, location if available and who received them); the number of alerts used in the month (Free plan) and the alerts you delete from your history.\n\nc) Location, only in these cases:\n· When you press an alert button: your location at that moment is sent to the family members you choose.\n· Live: only when you decide to share it, for the time you choose (15 minutes to 24 hours) and with the family members you choose. While sharing, your location is also sent with the app closed or in the background, and your phone shows a permanent notice. You can stop whenever you want.\n· Recover phone (Premium plan): if you turned it on beforehand in Options, a linked family member who has your username and password can ask your phone to share its location with your family group for up to 24 hours, to help you find it if it is lost or stolen. Your phone shows the permanent location notice meanwhile. You can turn this option off at any time.\n· \"Show my location\": your location is shown only on your screen and is not sent to anyone.\n\nd) Technical data: an identifier to send you notifications (Firebase), the app language and time zone, the installed version, your plan and your Google Play subscription data (purchase identifier and expiry date). We never receive your card details: Google processes the payment.\n\ne) Sensitive data: the \"injured, I need medical help\" status may reveal information about your health. Sending it is optional: you are not required to use that button or to provide sensitive data.\n\nThe app does not read your contacts, your SMS messages or your photos. Alert SMS messages are sent from your phone to the numbers of your linked family members and their cost depends on your carrier plan."
+      "a) Registration data: full name, username (@username), email, mobile number with country code and password. The password is stored encrypted: nobody can see it, not even us.\n\nb) Service data: your plan (Free, Family or Premium) and its validity; the family members you link and the requests you send or receive; the alerts you send (type, date, time, location if available and who received them) and automatic alerts, if you turn them on; the alerts you delete from your history; your app preferences (for example, the alert sound or whether you turned on Recover phone) and, only on the Free plan, how many alerts you have used in the month, to apply the limit of 6.\n\nc) Location, only in these cases:\n· When you press an alert button: your location at that moment is sent to the family members you choose.\n· Live: only when you decide to share it, for the time you choose (15 minutes to 24 hours) and with the family members you choose. While sharing, your location is also sent with the app closed or in the background, and your phone shows a permanent notice. You can stop whenever you want.\n· Recover phone (Premium plan): if you turned it on beforehand in Options, a linked family member who has your username and password can ask your phone to share its location with your family group for up to 24 hours, to help you find it if it is lost or stolen. Your phone shows the permanent location notice meanwhile. You can turn this option off at any time.\n· \"Show my location\": your location is shown only on your screen and is not sent to anyone.\n\nd) Technical data: an identifier of your phone so we can send you notifications, the app language and time zone, the installed version and, if you buy a plan, the subscription receipt provided by the app store (purchase identifier and expiry date). We never receive your card or payment details: the payment is processed by the app store where you downloaded the app.\n\ne) Sensitive data: the \"injured, I need medical help\" status may reveal information about your health. Sending it is optional: you are not required to use that button or to provide sensitive data.\n\nThe app does not read your contacts, your SMS messages or your photos. Alert SMS messages are sent from your phone to the numbers of your linked family members and their cost depends on your carrier plan."
      ],
      [
       "3. What we use your data for",
-      "· Creating and managing your account, signing in and recovering your password.\n· Sending your alerts to the family members you choose, by notification, SMS and, if you decide, WhatsApp.\n· Showing on the map the location you share and the one your family shares with you.\n· Helping you recover your phone, if you turned that option on.\n· Managing your plan, payments and Google Play renewals.\n· Keeping the service secure and preventing abuse or fraud.\n· Handling your questions, complaints and requests.\n· Complying with legal obligations.\n\nWe do not use your data for advertising, we do not sell it and we do not build commercial profiles."
+      "· Creating and managing your account, signing in and recovering your password.\n· Sending your alerts to the family members you choose, by notification, SMS and, if you decide, WhatsApp.\n· Showing on the map the location you share and the one your family shares with you.\n· Helping you recover your phone, if you turned that option on.\n· Managing your plan, payments and renewals with the app store.\n· Keeping the service secure and preventing abuse or fraud.\n· Handling your questions, complaints and requests.\n· Complying with legal obligations.\n\nWe do not use your data for advertising, we do not sell it and we do not build commercial profiles."
      ],
      [
       "4. Who we share it with",
-      "· Your linked family members: they only receive what you send or share with them, and only those you choose.\n· Providers that give us technology services (data processors), who may only use the data to provide that service: Supabase (database and accounts), Google (Firebase Cloud Messaging for notifications and Google Play for payments) and OpenStreetMap (map drawing and the approximate address of a point, without your name).\n· When you decide to open a link or send a message: Google Maps, WhatsApp and your phone carrier (SMS).\n· Authorities, only when a law or a court order requires it."
+      "· Your linked family members: they only receive what you send or share with them, and only those you choose.\n· Technology providers that help us provide the service (data processors), such as secure data storage, notification delivery, maps and the app store that processes payments. They may only use the data to provide that service and are required to protect it and keep it confidential.\n· When you decide to open a link or send a message: the maps app, the messaging app you choose or your phone carrier (SMS).\n· Authorities, only when a law or a court order requires it."
      ],
      [
       "5. International transfer",
-      "Our providers' servers may be located outside Colombia (for example, in the United States or other countries). By accepting this policy you authorize the international transmission and transfer of your data to those providers, which apply security and confidentiality measures."
+      "Some of our technology providers may store or process information on servers located outside Colombia. By accepting this policy you authorize the international transmission and transfer of your data to those providers, which apply security and confidentiality measures."
      ],
      [
       "6. How long we keep it",
-      "· Alerts: automatically deleted from the system after 24 hours. You can also remove them earlier from your history.\n· Shared location (Live and Recover phone): stops being visible when the chosen time ends or when you stop it, and is deleted from the system within 24 hours at the latest.\n· Phone recovery records: up to 30 days, for security.\n· Account and profile: while your account exists. If you delete your account, your data is permanently deleted within 30 days at most, except what a law requires to be kept (for example, payment records kept by Google Play)."
+      "· Alerts: automatically deleted from the system after 24 hours. You can also remove them earlier from your history.\n· Shared location (Live and Recover phone): stops being visible when the chosen time ends or when you stop it, and is deleted from the system within 24 hours at the latest.\n· Phone recovery records: up to 30 days, for security.\n· Account and profile: while your account exists. If you delete your account, your data is permanently deleted within 30 days at most, except what a law requires to be kept (for example, payment records kept by the app store)."
      ],
      [
       "7. Your rights",
@@ -655,7 +655,7 @@ const CONTENT = {
      ],
      [
       "6. It does not replace emergency services",
-      "The app is not an official emergency, police, ambulance, fire or private security service. In an emergency, first call the official emergency number of your country (in Colombia, 123). The app is an additional aid to alert your family."
+      "The app is not an official emergency, police, ambulance, fire or private security service. In an emergency, first call the official emergency number of your country. The app is an additional aid to alert your family."
      ],
      [
       "7. How it works",
@@ -667,7 +667,7 @@ const CONTENT = {
      ],
      [
       "9. Deleting your account",
-      "You can delete your account at any time from Options → Delete account. Your profile, family links, alerts and locations are deleted and cannot be recovered. If you have a subscription, you must cancel it in Google Play so you are not charged again."
+      "You can delete your account at any time from Options → Delete account. Your profile, family links, alerts and locations are deleted and cannot be recovered. If you have a subscription, you must cancel it in the app store where you bought it so you are not charged again."
      ],
      [
       "10. Intellectual property",
@@ -716,27 +716,27 @@ const CONTENT = {
      ],
      [
       "2. Plans",
-      "Free plan (no cost):\n· 1 linked family member.\n· Up to 6 alerts per month, renewed on the 1st of every month.\n· Unlimited notifications with sound.\n· See on the map the family members who share their location with you.\n· History deleted after 24 hours.\n\nFamily plan (monthly or annual subscription):\n· Up to 5 linked family members.\n· Unlimited alerts.\n· Share your live location.\n· Automatic alert every 2 hours after a danger or injury alert, until you turn it off.\n\nPremium plan (monthly or annual subscription):\n· Up to 10 linked family members.\n· Everything in the Family plan.\n· Recover phone."
+      "Free plan (no cost):\n· Link 1 family member to your emergency group.\n· Send up to 6 alerts per month by SMS, WhatsApp and notification. They renew on the 1st of every month.\n· Receive unlimited notifications with sound, even when you are not looking at your phone.\n· Your alert history is automatically deleted after 24 hours, or whenever you decide.\n· See on the live map the family members who share their location with you.\n· Designed to work even with a weak data and mobile signal.\n\nFamily plan (monthly or annual subscription):\n· Link up to 5 family members to your emergency group.\n· Send unlimited alerts by SMS, WhatsApp and notification.\n· Receive unlimited notifications with sound, even when you are not looking at your phone.\n· Your alert history is automatically deleted after 24 hours, or whenever you decide.\n· Share your live location with your family whenever you decide (up to 24 hours), with whoever you choose, and see theirs on the map.\n· Automatic alert: after a danger or injury alert, it is sent again every 2 hours until you turn it off.\n· Designed to work even with a weak data and mobile signal.\n\nPremium plan (monthly or annual subscription):\n· Link up to 10 family members to your emergency group.\n· Send unlimited alerts by SMS, WhatsApp and notification.\n· Receive unlimited notifications with sound, even when you are not looking at your phone.\n· Your alert history is automatically deleted after 24 hours, or whenever you decide.\n· Share your live location with your family whenever you decide (up to 24 hours), with whoever you choose, and see theirs on the map.\n· Automatic alert: after a danger or injury alert, it is sent again every 2 hours until you turn it off.\n· Designed to work even with a weak data and mobile signal.\n· Recover phone: if it is stolen or lost, a linked family member helps your phone share its location for up to 24 hours."
      ],
      [
       "3. Price and payment",
-      "The price of each plan is shown in Google Play before paying, in your currency and with the applicable taxes. Google Play processes the payment: we never receive your card details. Plans have no trial period: you are charged when you subscribe."
+      "The price of each plan is shown in the app store before paying, in your currency and with the applicable taxes. The payment is processed by the app store where you downloaded the app: we never receive your card or payment details. Plans have no trial period: you are charged when you subscribe."
      ],
      [
       "4. Automatic renewal",
-      "The subscription renews automatically at the end of each period (month or year) and the current Google Play price is charged, unless you cancel before the renewal date."
+      "The subscription renews automatically at the end of each period (month or year) and the current app store price is charged, unless you cancel before the renewal date."
      ],
      [
       "5. Cancellation",
-      "You can cancel at any time in Google Play → Payments &amp; subscriptions (or from the link on the plans screen). When you cancel, you are not charged again and you keep the benefits until the last day you already paid for."
+      "You can cancel at any time from the subscriptions section of the app store where you bought it, or from the link on the plans screen. When you cancel, you are not charged again and you keep the benefits until the last day you already paid for."
      ],
      [
       "6. Changing plans",
-      "If you change plans (for example, from Family to Premium) or from monthly to annual, the new subscription replaces the previous one and Google Play credits the time you did not use. You never pay for two plans at the same time."
+      "If you change plans (for example, from Family to Premium) or from monthly to annual, the new subscription replaces the previous one and the app store adjusts the charge for the time you did not use. You never pay for two plans at the same time."
      ],
      [
       "7. Refunds and consumer rights",
-      "Refunds are handled by Google Play according to its policies. In addition, the rights granted by Colombian Law 1480 of 2011 (Consumer Statute), such as the right of withdrawal and payment reversal, are respected in the cases and conditions established by that law. You can send your requests, complaints or claims to assyst2021@ssthechofacil.com; you can also contact the Superintendence of Industry and Commerce (SIC)."
+      "Refunds are handled through the app store where you made the purchase, according to its policies. In addition, the rights granted by Colombian Law 1480 of 2011 (Consumer Statute), such as the right of withdrawal and payment reversal, are respected in the cases and conditions established by that law. You can send your requests, complaints or claims to assyst2021@ssthechofacil.com; you can also contact the Superintendence of Industry and Commerce (SIC)."
      ],
      [
       "8. What the app needs to work",
@@ -760,7 +760,7 @@ const CONTENT = {
      ],
      [
       "13. Changes to the agreement",
-      "If we change this agreement in an important way, we will notify you in the app and ask you to accept it again. Price changes are announced by Google Play before the next renewal."
+      "If we change this agreement in an important way, we will notify you in the app and ask you to accept it again. Price changes are announced through the app store before the next renewal."
      ],
      [
       "14. Governing law",
@@ -809,7 +809,7 @@ const CONTENT = {
      ],
      [
       "3. Not an emergency service",
-      "The app is a support tool to alert your family. It does not replace the police, ambulances, firefighters or the official emergency number of your country (in Colombia, 123)."
+      "The app is a support tool to alert your family. It does not replace the police, ambulances, firefighters or the official emergency number of your country."
      ],
      [
       "4. Liability",
@@ -866,11 +866,11 @@ const CONTENT = {
      ],
      [
       "What is not deleted",
-      "Payment records are kept by Google Play under its own policies. Alerts you already sent may have reached your family members' phones as SMS or WhatsApp messages: those messages stay on their phones."
+      "Payment records are kept by the app store under its own policies. Alerts you already sent may have reached your family members' phones as SMS or WhatsApp messages: those messages stay on their phones."
      ],
      [
       "Your subscription",
-      "Deleting your account does not cancel your Google Play subscription. Cancel it in Google Play → Payments & subscriptions so you are not charged again."
+      "Deleting your account does not cancel your subscription. Cancel it in the app store where you bought it so you are not charged again."
      ],
      [
       "Delete data without deleting the account",
@@ -923,23 +923,23 @@ const CONTENT = {
      ],
      [
       "2. Quais dados tratamos",
-      "a) Dados de cadastro: nome completo, nome de usuário (@usuário), e-mail, número de celular com código do país e senha. A senha é guardada criptografada: ninguém pode vê-la, nem mesmo nós.\n\nb) Dados do serviço: os familiares que você vincula e as solicitações que envia ou recebe; os alertas que você envia (tipo, data, hora, localização se disponível e para quem foram enviados); o número de alertas usados no mês (plano Gratuito) e os alertas que você apaga do seu histórico.\n\nc) Localização, somente nestes casos:\n· Ao apertar um botão de alerta: sua localização naquele momento é enviada aos familiares que você escolher.\n· Ao vivo: somente quando você decide compartilhá-la, pelo tempo que escolher (de 15 minutos a 24 horas) e com os familiares que escolher. Enquanto compartilha, a localização também é enviada com o app fechado ou em segundo plano, e seu celular mostra um aviso permanente. Você pode parar quando quiser.\n· Recuperar celular (plano Premium): se você ativou antes em Opções, um familiar vinculado que tenha seu usuário e senha pode pedir que seu celular compartilhe a localização com seu grupo familiar por até 24 horas, para ajudar você a encontrá-lo se for perdido ou roubado. Seu celular mostra o aviso permanente de localização enquanto isso. Você pode desativar esta opção quando quiser.\n· \"Ver minha localização\": sua localização aparece somente na sua tela e não é enviada a ninguém.\n\nd) Dados técnicos: um identificador para enviar notificações (Firebase), o idioma e o fuso horário do app, a versão instalada, seu plano e os dados da sua assinatura do Google Play (identificador da compra e data de vencimento). Nunca recebemos os dados do seu cartão: o pagamento é processado pelo Google.\n\ne) Dado sensível: o estado \"ferido, preciso de ajuda médica\" pode revelar informações sobre sua saúde. Enviá-lo é opcional: você não é obrigado a usar esse botão nem a fornecer dados sensíveis.\n\nO app não lê seus contatos, suas mensagens SMS nem suas fotos. Os SMS de alerta saem do seu celular para os números dos seus familiares vinculados e o custo depende do seu plano com a operadora."
+      "a) Dados de cadastro: nome completo, nome de usuário (@usuário), e-mail, número de celular com código do país e senha. A senha é guardada criptografada: ninguém pode vê-la, nem mesmo nós.\n\nb) Dados do serviço: seu plano (Gratuito, Familiar ou Premium) e sua vigência; os familiares que você vincula e as solicitações que envia ou recebe; os alertas que você envia (tipo, data, hora, localização se disponível e para quem foram enviados) e os alertas automáticos, se você os ativar; os alertas que você apaga do seu histórico; suas preferências no app (por exemplo, o som dos alertas ou se você ativou Recuperar celular) e, somente no plano Gratuito, quantos alertas você usou no mês, para aplicar o limite de 6.\n\nc) Localização, somente nestes casos:\n· Ao apertar um botão de alerta: sua localização naquele momento é enviada aos familiares que você escolher.\n· Ao vivo: somente quando você decide compartilhá-la, pelo tempo que escolher (de 15 minutos a 24 horas) e com os familiares que escolher. Enquanto compartilha, a localização também é enviada com o app fechado ou em segundo plano, e seu celular mostra um aviso permanente. Você pode parar quando quiser.\n· Recuperar celular (plano Premium): se você ativou antes em Opções, um familiar vinculado que tenha seu usuário e senha pode pedir que seu celular compartilhe a localização com seu grupo familiar por até 24 horas, para ajudar você a encontrá-lo se for perdido ou roubado. Seu celular mostra o aviso permanente de localização enquanto isso. Você pode desativar esta opção quando quiser.\n· \"Ver minha localização\": sua localização aparece somente na sua tela e não é enviada a ninguém.\n\nd) Dados técnicos: um identificador do seu celular para podermos enviar notificações, o idioma e o fuso horário do app, a versão instalada e, se você comprar um plano, o comprovante da assinatura que a loja de aplicativos nos entrega (identificador da compra e data de vencimento). Nunca recebemos os dados do seu cartão nem do seu meio de pagamento: o pagamento é processado pela loja de aplicativos onde você baixou o app.\n\ne) Dado sensível: o estado \"ferido, preciso de ajuda médica\" pode revelar informações sobre sua saúde. Enviá-lo é opcional: você não é obrigado a usar esse botão nem a fornecer dados sensíveis.\n\nO app não lê seus contatos, suas mensagens SMS nem suas fotos. Os SMS de alerta saem do seu celular para os números dos seus familiares vinculados e o custo depende do seu plano com a operadora."
      ],
      [
       "3. Para que usamos seus dados",
-      "· Criar e administrar sua conta, entrar e recuperar a senha.\n· Enviar seus alertas aos familiares que você escolher, por notificação, SMS e, se você decidir, WhatsApp.\n· Mostrar no mapa a localização que você compartilha e a que seus familiares compartilham com você.\n· Ajudar você a recuperar seu celular, se ativou essa opção.\n· Gerenciar seu plano, os pagamentos e as renovações do Google Play.\n· Manter a segurança do serviço e evitar abusos ou fraudes.\n· Atender suas consultas, reclamações e solicitações.\n· Cumprir obrigações legais.\n\nNão usamos seus dados para publicidade, não os vendemos e não criamos perfis comerciais."
+      "· Criar e administrar sua conta, entrar e recuperar a senha.\n· Enviar seus alertas aos familiares que você escolher, por notificação, SMS e, se você decidir, WhatsApp.\n· Mostrar no mapa a localização que você compartilha e a que seus familiares compartilham com você.\n· Ajudar você a recuperar seu celular, se ativou essa opção.\n· Gerenciar seu plano, os pagamentos e as renovações com a loja de aplicativos.\n· Manter a segurança do serviço e evitar abusos ou fraudes.\n· Atender suas consultas, reclamações e solicitações.\n· Cumprir obrigações legais.\n\nNão usamos seus dados para publicidade, não os vendemos e não criamos perfis comerciais."
      ],
      [
       "4. Com quem compartilhamos",
-      "· Seus familiares vinculados: recebem somente o que você envia ou compartilha, e somente os que você escolher.\n· Fornecedores que nos prestam serviços tecnológicos (operadores do tratamento), que só podem usar os dados para prestar esse serviço: Supabase (banco de dados e contas), Google (Firebase Cloud Messaging para as notificações e Google Play para os pagamentos) e OpenStreetMap (desenho do mapa e endereço aproximado de um ponto, sem seu nome).\n· Quando você decide abrir um link ou enviar uma mensagem: Google Maps, WhatsApp e sua operadora (SMS).\n· Autoridades, somente quando uma lei ou ordem judicial exigir."
+      "· Seus familiares vinculados: recebem somente o que você envia ou compartilha, e somente os que você escolher.\n· Fornecedores tecnológicos que nos ajudam a prestar o serviço (operadores do tratamento), como os de armazenamento seguro das informações, envio de notificações, mapas e a loja de aplicativos que processa os pagamentos. Só podem usar os dados para prestar esse serviço e são obrigados a protegê-los e mantê-los em sigilo.\n· Quando você decide abrir um link ou enviar uma mensagem: o aplicativo de mapas, o de mensagens que você escolher ou sua operadora (SMS).\n· Autoridades, somente quando uma lei ou ordem judicial exigir."
      ],
      [
       "5. Transferência internacional",
-      "Os servidores dos nossos fornecedores podem estar fora da Colômbia (por exemplo, nos Estados Unidos ou em outros países). Ao aceitar esta política você autoriza a transmissão e a transferência internacional dos seus dados a esses fornecedores, que aplicam medidas de segurança e confidencialidade."
+      "Alguns dos nossos fornecedores tecnológicos podem guardar ou processar as informações em servidores localizados fora da Colômbia. Ao aceitar esta política você autoriza a transmissão e a transferência internacional dos seus dados a esses fornecedores, que aplicam medidas de segurança e confidencialidade."
      ],
      [
       "6. Por quanto tempo guardamos",
-      "· Alertas: são apagados do sistema automaticamente após 24 horas. Você também pode removê-los antes do seu histórico.\n· Localização compartilhada (Ao vivo e Recuperar celular): deixa de ser vista quando termina o tempo escolhido ou quando você a interrompe, e é apagada do sistema no máximo 24 horas depois.\n· Registro das recuperações de celular: até 30 dias, por segurança.\n· Conta e perfil: enquanto sua conta existir. Se você excluir sua conta, seus dados são apagados definitivamente em no máximo 30 dias, exceto o que uma lei obrigue a guardar (por exemplo, os registros de pagamento que o Google Play guarda)."
+      "· Alertas: são apagados do sistema automaticamente após 24 horas. Você também pode removê-los antes do seu histórico.\n· Localização compartilhada (Ao vivo e Recuperar celular): deixa de ser vista quando termina o tempo escolhido ou quando você a interrompe, e é apagada do sistema no máximo 24 horas depois.\n· Registro das recuperações de celular: até 30 dias, por segurança.\n· Conta e perfil: enquanto sua conta existir. Se você excluir sua conta, seus dados são apagados definitivamente em no máximo 30 dias, exceto o que uma lei obrigue a guardar (por exemplo, os registros de pagamento que a loja de aplicativos guarda)."
      ],
      [
       "7. Seus direitos",
@@ -1016,7 +1016,7 @@ const CONTENT = {
      ],
      [
       "6. Não substitui os serviços de emergência",
-      "O app não é um serviço oficial de emergências, polícia, ambulância, bombeiros nem segurança privada. Em uma emergência, ligue primeiro para o número oficial de emergências do seu país (no Brasil, 190, 192 ou 193; na Colômbia, 123). O app é um apoio adicional para avisar sua família."
+      "O app não é um serviço oficial de emergências, polícia, ambulância, bombeiros nem segurança privada. Em uma emergência, ligue primeiro para o número oficial de emergências do seu país. O app é um apoio adicional para avisar sua família."
      ],
      [
       "7. Funcionamento",
@@ -1028,7 +1028,7 @@ const CONTENT = {
      ],
      [
       "9. Excluir sua conta",
-      "Você pode excluir sua conta quando quiser em Opções → Excluir conta. São apagados seu perfil, seus vínculos familiares, seus alertas e suas localizações, e não é possível recuperá-los. Se você tiver uma assinatura, deve cancelá-la no Google Play para não continuar sendo cobrado."
+      "Você pode excluir sua conta quando quiser em Opções → Excluir conta. São apagados seu perfil, seus vínculos familiares, seus alertas e suas localizações, e não é possível recuperá-los. Se você tiver uma assinatura, deve cancelá-la na loja de aplicativos onde a comprou para não continuar sendo cobrado."
      ],
      [
       "10. Propriedade intelectual",
@@ -1077,27 +1077,27 @@ const CONTENT = {
      ],
      [
       "2. Planos",
-      "Plano Gratuito (sem custo):\n· 1 familiar vinculado.\n· Até 6 alertas por mês, renovados no dia 1 de cada mês.\n· Notificações ilimitadas com som.\n· Ver no mapa os familiares que compartilham a localização com você.\n· Histórico apagado após 24 horas.\n\nPlano Familiar (assinatura mensal ou anual):\n· Até 5 familiares vinculados.\n· Alertas ilimitados.\n· Compartilhar sua localização ao vivo.\n· Alerta automático a cada 2 horas depois de um alerta de perigo ou de ferido, até você desativá-lo.\n\nPlano Premium (assinatura mensal ou anual):\n· Até 10 familiares vinculados.\n· Tudo do Plano Familiar.\n· Recuperar celular."
+      "Plano Gratuito (sem custo):\n· Vincule 1 familiar ao seu grupo de emergência.\n· Envie até 6 alertas por mês por SMS, WhatsApp e notificação. Eles são renovados no dia 1 de cada mês.\n· Receba notificações ilimitadas com som, mesmo quando não estiver olhando para o celular.\n· Seu histórico de alertas é excluído automaticamente após 24 horas, ou quando você decidir.\n· Veja no mapa ao vivo os familiares que compartilham a localização com você.\n· Pensado para funcionar mesmo com pouco sinal de dados e de celular.\n\nPlano Familiar (assinatura mensal ou anual):\n· Vincule até 5 familiares ao seu grupo de emergência.\n· Envie alertas ilimitados por SMS, WhatsApp e notificação.\n· Receba notificações ilimitadas com som, mesmo quando não estiver olhando para o celular.\n· Seu histórico de alertas é excluído automaticamente após 24 horas, ou quando você decidir.\n· Compartilhe sua localização ao vivo com sua família quando você decidir (até 24 horas), com quem você escolher, e veja a deles no mapa.\n· Alerta automático: depois de um alerta de perigo ou de ferido, é enviado novamente a cada 2 horas até você desativá-lo.\n· Pensado para funcionar mesmo com pouco sinal de dados e de celular.\n\nPlano Premium (assinatura mensal ou anual):\n· Vincule até 10 familiares ao seu grupo de emergência.\n· Envie alertas ilimitados por SMS, WhatsApp e notificação.\n· Receba notificações ilimitadas com som, mesmo quando não estiver olhando para o celular.\n· Seu histórico de alertas é excluído automaticamente após 24 horas, ou quando você decidir.\n· Compartilhe sua localização ao vivo com sua família quando você decidir (até 24 horas), com quem você escolher, e veja a deles no mapa.\n· Alerta automático: depois de um alerta de perigo ou de ferido, é enviado novamente a cada 2 horas até você desativá-lo.\n· Pensado para funcionar mesmo com pouco sinal de dados e de celular.\n· Recuperar celular: se roubarem ou você perder, um familiar vinculado ajuda seu celular a compartilhar a localização por até 24 horas."
      ],
      [
       "3. Preço e pagamento",
-      "O preço de cada plano é mostrado no Google Play antes de pagar, na sua moeda e com os impostos correspondentes. O pagamento é processado pelo Google Play: nunca recebemos os dados do seu cartão. Os planos não têm período de teste: a cobrança é feita ao assinar."
+      "O preço de cada plano é mostrado na loja de aplicativos antes de pagar, na sua moeda e com os impostos correspondentes. O pagamento é processado pela loja de aplicativos onde você baixou o app: nunca recebemos os dados do seu cartão nem do seu meio de pagamento. Os planos não têm período de teste: a cobrança é feita ao assinar."
      ],
      [
       "4. Renovação automática",
-      "A assinatura se renova sozinha no final de cada período (mês ou ano) e é cobrado o valor vigente no Google Play, a menos que você cancele antes da data de renovação."
+      "A assinatura se renova sozinha no final de cada período (mês ou ano) e é cobrado o valor vigente na loja de aplicativos, a menos que você cancele antes da data de renovação."
      ],
      [
       "5. Cancelamento",
-      "Você pode cancelar quando quiser em Google Play → Pagamentos e assinaturas (ou pelo link da tela de planos). Ao cancelar, você não é mais cobrado e mantém os benefícios até o último dia já pago."
+      "Você pode cancelar quando quiser na seção de assinaturas da loja de aplicativos onde a comprou, ou pelo link da tela de planos. Ao cancelar, você não é mais cobrado e mantém os benefícios até o último dia já pago."
      ],
      [
       "6. Mudança de plano",
-      "Se você mudar de plano (por exemplo, de Familiar para Premium) ou de mensal para anual, a nova assinatura substitui a anterior e o Google Play desconta o tempo que você não usou. Você nunca paga dois planos ao mesmo tempo."
+      "Se você mudar de plano (por exemplo, de Familiar para Premium) ou de mensal para anual, a nova assinatura substitui a anterior e a loja de aplicativos ajusta a cobrança pelo tempo que você não usou. Você nunca paga dois planos ao mesmo tempo."
      ],
      [
       "7. Reembolsos e direitos do consumidor",
-      "Os reembolsos são gerenciados pelo Google Play conforme suas políticas. Além disso, são respeitados os direitos dados pela Lei colombiana 1480 de 2011 (Estatuto do Consumidor), como o direito de arrependimento e a reversão do pagamento, nos casos e condições que essa lei estabelece. Você pode enviar seus pedidos, queixas ou reclamações para assyst2021@ssthechofacil.com; também pode recorrer à Superintendência de Indústria e Comércio (SIC) da Colômbia."
+      "Os reembolsos são gerenciados pela loja de aplicativos onde você fez a compra, conforme suas políticas. Além disso, são respeitados os direitos dados pela Lei colombiana 1480 de 2011 (Estatuto do Consumidor), como o direito de arrependimento e a reversão do pagamento, nos casos e condições que essa lei estabelece. Você pode enviar seus pedidos, queixas ou reclamações para assyst2021@ssthechofacil.com; também pode recorrer à Superintendência de Indústria e Comércio (SIC) da Colômbia."
      ],
      [
       "8. O que o app precisa para funcionar",
@@ -1121,7 +1121,7 @@ const CONTENT = {
      ],
      [
       "13. Mudanças do contrato",
-      "Se mudarmos este contrato de forma importante, avisaremos no app e pediremos que você o aceite novamente. As mudanças de preço são informadas pelo Google Play antes da próxima renovação."
+      "Se mudarmos este contrato de forma importante, avisaremos no app e pediremos que você o aceite novamente. As mudanças de preço são informadas pela loja de aplicativos antes da próxima renovação."
      ],
      [
       "14. Lei aplicável",
@@ -1170,7 +1170,7 @@ const CONTENT = {
      ],
      [
       "3. Não é um serviço de emergências",
-      "O app é uma ferramenta de apoio para avisar sua família. Não substitui a polícia, ambulâncias, bombeiros nem o número oficial de emergências do seu país (no Brasil, 190, 192 ou 193; na Colômbia, 123)."
+      "O app é uma ferramenta de apoio para avisar sua família. Não substitui a polícia, ambulâncias, bombeiros nem o número oficial de emergências do seu país."
      ],
      [
       "4. Responsabilidade",
@@ -1227,11 +1227,11 @@ const CONTENT = {
      ],
      [
       "O que não é excluído",
-      "Os registros de pagamento são guardados pelo Google Play conforme suas próprias políticas. Os alertas que você já enviou podem ter chegado como SMS ou WhatsApp aos celulares dos seus familiares: essas mensagens ficam nos telefones deles."
+      "Os registros de pagamento são guardados pela loja de aplicativos conforme suas próprias políticas. Os alertas que você já enviou podem ter chegado como SMS ou WhatsApp aos celulares dos seus familiares: essas mensagens ficam nos telefones deles."
      ],
      [
       "Sua assinatura",
-      "Excluir a conta não cancela a assinatura do Google Play. Cancele em Google Play → Pagamentos e assinaturas para não continuar sendo cobrado."
+      "Excluir a conta não cancela a assinatura. Cancele na loja de aplicativos onde você a comprou para não continuar sendo cobrado."
      ],
      [
       "Apagar dados sem excluir a conta",
@@ -1314,7 +1314,7 @@ try {
   if (savedTab && docIds.includes(savedTab)) currentDoc = savedTab;
 } catch(_){}
 
-// Enlace directo a una pestaña y a un idioma: …/?lang=en#eliminar (el de Google Play y el de la app)
+// Enlace directo a una pestaña y a un idioma: …/?lang=en#eliminar (el de la tienda de aplicaciones y el de la app)
 function leerEnlace() {
   const doc = location.hash.slice(1);
   if (docIds.includes(doc)) currentDoc = doc;
